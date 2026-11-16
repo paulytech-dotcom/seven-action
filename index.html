@@ -800,6 +800,47 @@ body { margin: 0; background: #231F20; }
 .fdr-ctas .fdr-cta > .ic { margin-left: auto; flex: none; width: 36px; height: 36px; padding: 9px; box-sizing: border-box; border-radius: 50%; border: 1px solid rgba(238,237,233,.3); transition: background-color .25s, color .25s, transform .25s; }
 .fdr-ctas .fdr-cta:hover > .ic { background: #EEEDE9; color: #231F20; transform: translateX(3px); }
 .idbtn-txt { flex: 1; }
+/* ---------- Disciplines : allègement ---------- */
+.disc .h2 { font-weight: 800; letter-spacing: -0.035em; }
+.disc .disc-t { font-size: clamp(34px, 3.2vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
+.disc .disc-intro p + p { margin-top: 14px; }
+.disc .disc-intro p:last-child { font-size: 17px; color: rgba(255,255,255,.78); }
+.disc .disc-no { margin-top: 22px; }
+.disc .disc-t { margin-top: 12px; }
+.disc .disc-text { margin-top: 16px; }
+.disc .disc-tags { margin-top: 22px; }
+/* ---------- Storyboard ---------- */
+.syn .sb { margin-top: 110px; }
+.sb-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; }
+.syn .sb-h { margin-top: 14px; font-size: clamp(34px, 3.6vw, 52px); font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: #231F20; }
+.sb-h .serif { color: #9A304F; letter-spacing: -0.01em; }
+.sb-h .dot { width: .15em; height: .15em; color: #9A304F; }
+.syn .sb-note { font-size: 16px; color: #645C5E; }
+.syn .sb-row { margin-top: 32px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.sb-cell { position: relative; }
+.sb-cell:not(:last-child)::after { content: ''; position: absolute; top: calc(50% - 60px); right: -17px; width: 12px; height: 12px; border-top: 2.5px solid #9A304F; border-right: 2.5px solid #9A304F; rotate: 45deg; }
+.sb-frame { position: relative; aspect-ratio: 16 / 10; background: #FFFFFF; border: 2px solid #231F20; border-radius: 6px; overflow: hidden; box-shadow: 6px 6px 0 rgba(35,31,32,.12); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+.sb-frame svg { display: block; width: 100%; height: 100%; }
+.sb-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 26px 14px 20px; text-align: center; background: repeating-linear-gradient(135deg, #F7F6F3 0 10px, #EFEDE8 10px 20px); }
+.sb-ph .ic { width: 30px; height: 30px; color: #9A304F; }
+.sb-ph-t { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #231F20; }
+.sb-ph-h { font-size: 12.5px; line-height: 1.3; color: #645C5E; }
+.sb-frame:has(.sb-ph) { border-style: dashed; }
+.sb-tag, .sb-time { z-index: 2; }
+.sb-cell:hover .sb-frame { transform: translate(-3px, -3px) rotate(-.6deg); box-shadow: 9px 9px 0 rgba(154,48,79,.25); }
+.sb-tag { position: absolute; top: 8px; left: 10px; font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #645C5E; }
+.sb-time { position: absolute; right: 10px; bottom: 7px; font-size: 9.5px; font-weight: 700; letter-spacing: .1em; color: #9A304F; }
+.syn .sb-t { margin-top: 18px; display: flex; align-items: baseline; gap: 10px; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; color: #231F20; }
+.sb-n { font-size: 12px; font-weight: 700; color: #9A304F; letter-spacing: .08em; }
+.syn .sb-p { margin-top: 8px; font-size: 15px; line-height: 1.55; color: #4A4344; }
+.syn .sb-quote { margin: 100px auto 0; max-width: 960px; text-align: center; }
+.sb-quote blockquote { margin: 0; }
+.sb-quote blockquote p { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(54px, 7vw, 104px); line-height: 1; letter-spacing: -0.01em; color: #9A304F; }
+.syn .sb-quote figcaption { margin-top: 20px; font-size: 14px; color: #645C5E; }
+.sb-quote figcaption .mono { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #231F20; }
+.sb-quote figcaption a { color: #9A304F; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1000px) { .syn .sb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; } .sb-cell::after { display: none; } }
+@media (max-width: 520px) { .syn .sb-row { grid-template-columns: minmax(0, 1fr); } .syn .sb { margin-top: 80px; } .syn .sb-quote { margin-top: 70px; } }
 /* ---------- Formulaire de contact ---------- */
 .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
 .sheet .sheet-err { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: rgba(154,48,79,.1); border: 1px solid rgba(154,48,79,.45); color: #7B203B; font-size: 14px; font-weight: 600; line-height: 1.4; }
@@ -1230,6 +1271,41 @@ body { margin: 0; background: #231F20; }
           <p>Des séquences d’action chorégraphiées puis filmées, pour passer du tapis à l’écran.</p>
         </li>
       </ol>
+      <div class="sb">
+        <div class="sb-head reveal">
+          <div>
+            <p class="slug" style="color: #9A304F">Storyboard</p>
+            <h3 class="sb-h"><span class="serif">Une séance</span> type<span class="dot"></span></h3>
+          </div>
+          <p class="sb-note">Le déroulé d’un stage, plan par plan.</p>
+        </div>
+        <ol class="sb-row">
+          <li class="sb-cell reveal">
+            <div class="sb-frame"><span class="sb-tag mono">Plan 1 · Plan large</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">Échauffement en groupe</span></span><span class="sb-time mono">TC 00:00</span></div>
+            <h4 class="sb-t"><span class="sb-n mono">01</span>Échauffement</h4>
+            <p class="sb-p">Préparation physique, articulations, gainage&nbsp;: on chauffe la machine avant l’action.</p>
+          </li>
+          <li class="sb-cell reveal r2">
+            <div class="sb-frame"><span class="sb-tag mono">Plan 2 · Plan moyen</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">Une chute sur tapis</span></span><span class="sb-time mono">TC 00:25</span></div>
+            <h4 class="sb-t"><span class="sb-n mono">02</span>Chutes &amp; réceptions</h4>
+            <p class="sb-p">Roulades, chutes arrière, réceptions sur tapis&nbsp;: apprendre à tomber sans se faire mal.</p>
+          </li>
+          <li class="sb-cell reveal">
+            <div class="sb-frame"><span class="sb-tag mono">Plan 3 · Plan américain</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">Un duo en combat chorégraphié</span></span><span class="sb-time mono">TC 01:10</span></div>
+            <h4 class="sb-t"><span class="sb-n mono">03</span>Combat chorégraphié</h4>
+            <p class="sb-p">Coups simulés, esquives et réactions&nbsp;: on frappe sans toucher, en rythme avec son partenaire.</p>
+          </li>
+          <li class="sb-cell reveal r2">
+            <div class="sb-frame"><span class="sb-tag mono">Plan 4 · Moteur&nbsp;!</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">La caméra en tournage</span></span><span class="sb-time mono">TC 02:30</span></div>
+            <h4 class="sb-t"><span class="sb-n mono">04</span>Ça tourne</h4>
+            <p class="sb-p">La scène est filmée puis revue à l’écran, pour ajuster les angles et le rythme.</p>
+          </li>
+        </ol>
+      </div>
+      <figure class="sb-quote reveal">
+        <blockquote><p>«&nbsp;Sport, sport, sport.&nbsp;»</p></blockquote>
+        <figcaption><span class="mono">Jean Huynh</span> · sur la base du métier, dans <a href="https://trustsportsmagazine.fr/tomber-juste-avec-jean-huynh-cascadeur/" target="_blank" rel="noopener">Trust Sports Magazine</a></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1240,7 +1316,7 @@ body { margin: 0; background: #231F20; }
           <p class="slug reveal" style="color: #EEEDE9">SC. 02 — Au programme</p>
           <h2 class="h2 reveal" style="margin-top: 30px; color: #FFFFFF"><span class="serif">Trois disciplines,</span>une seule scène<span class="dot"></span></h2>
         </div>
-        <p class="disc-intro reveal r2">À Seven Action, les trois se répondent&nbsp;: les arts martiaux donnent la précision, la cascade l’engagement, le cinéma le sens du cadre.</p>
+        <div class="disc-intro reveal r2"><p>À Seven Action, les trois se répondent&nbsp;: les arts martiaux donnent la précision, la cascade l’engagement, le cinéma le sens du cadre.</p><p>L’association les réunit dans un même parcours, encadré par un cascadeur professionnel en activité&nbsp;: pour progresser à son rythme, du premier stage à la première scène tournée.</p></div>
       </div>
       <div class="discs">
         <article class="disc-item reveal">
