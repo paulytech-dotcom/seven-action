@@ -782,6 +782,9 @@ body { margin: 0; background: #231F20; }
 .sheet .sheet-err { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: rgba(154,48,79,.1); border: 1px solid rgba(154,48,79,.45); color: #7B203B; font-size: 14px; font-weight: 600; line-height: 1.4; }
 .sheet .sheet-err[hidden] { display: none; }
 .sheet-send[disabled] { opacity: .65; cursor: progress; transform: none; }
+.sheet .req { color: #9A304F; font-weight: 800; }
+.sheet .sheet-req { margin-top: 14px; font-size: 12.5px; color: rgba(35,31,32,.65); }
+.sheet .field .is-invalid { border-color: #9A304F; box-shadow: 0 0 0 3px rgba(154,48,79,.18); }
 .sheet .sheet-legal { margin-top: 14px; font-size: 12px; line-height: 1.5; color: rgba(35,31,32,.6); }
 /* ---------- Fondateur : bento ---------- */
 .fdr-top { align-items: center; }
@@ -1539,12 +1542,13 @@ body { margin: 0; background: #231F20; }
         <div class="sheet-head"><span>Feuille de service</span><span>N° 07</span></div>
         <span class="if" data-if="notSent">
           <div class="sheet-grid">
-            <label class="field"><span>Prénom et nom</span><input type="text" name="c-nom" placeholder="Prénom Nom" autocomplete="name" required maxlength="120"></label>
-            <label class="field"><span>Email</span><input type="email" name="c-email" placeholder="adresse@email.fr" autocomplete="email" required maxlength="160"></label>
+            <label class="field"><span>Prénom et nom <b class="req" aria-hidden="true">*</b></span><input type="text" name="c-nom" placeholder="Prénom Nom" autocomplete="name" required maxlength="120"></label>
+            <label class="field"><span>Email <b class="req" aria-hidden="true">*</b></span><input type="email" name="c-email" placeholder="adresse@email.fr" autocomplete="email" required maxlength="160"></label>
             <label class="field full"><span>Ta demande</span><select name="c-sujet"><option>Un stage ou un atelier</option><option>Rejoindre l’association</option><option>Un projet de tournage</option><option>Autre chose</option></select></label>
-            <label class="field full"><span>Message</span><textarea name="c-msg" rows="4" placeholder="Ton niveau, tes envies, ton projet…" required maxlength="4000"></textarea></label>
+            <label class="field full"><span>Message <b class="req" aria-hidden="true">*</b></span><textarea name="c-msg" rows="4" placeholder="Ton niveau, tes envies, ton projet…" required maxlength="4000"></textarea></label>
           </div>
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="sheet-req"><b class="req" aria-hidden="true">*</b> Champs obligatoires</p>
           <p class="sheet-err" role="alert" hidden></p>
           <button type="button" class="btn btn-bordeaux sheet-send" data-on="sendContact">Envoyer · Action&nbsp;! <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
           <p class="sheet-legal">Tes informations servent uniquement à te répondre. Elles ne sont ni conservées sur le site, ni transmises à des tiers.</p>
@@ -1632,12 +1636,14 @@ body { margin: 0; background: #231F20; }
       var err = box.querySelector('.sheet-err'), btn = box.querySelector('.sheet-send');
       var nom = f('c-nom').value.trim(), mail = f('c-email').value.trim(), sujet = f('c-sujet').value, msg = f('c-msg').value.trim();
       err.hidden = true;
-      if (!nom || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail) || !msg) { err.textContent = 'Merci d’indiquer ton nom, un email valide et ton message.'; err.hidden = false; return; }
+      var bad = { 'c-nom': !nom, 'c-email': !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail), 'c-msg': !msg };
+      Object.keys(bad).forEach(function (n) { f(n).classList.toggle('is-invalid', bad[n]); f(n).setAttribute('aria-invalid', String(bad[n])); });
+      if (bad['c-nom'] || bad['c-email'] || bad['c-msg']) { err.textContent = 'Merci de remplir les champs obligatoires (*) : ton nom, un email valide et ton message.'; err.hidden = false; box.querySelector('.is-invalid').focus(); return; }
       if (f('botcheck').checked) { return; }
       if (!W3F_KEY) { show('notSent', false); show('sent', true); return; }
       var label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Envoi en cours…';
       fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ access_key: W3F_KEY, subject: 'Site Seven Action — ' + sujet, from_name: 'Site Seven Action', name: nom, email: mail, demande: sujet, message: msg, botcheck: false }) })
+        body: JSON.stringify({ access_key: W3F_KEY, subject: '[Formulaire contact Seven Action] ' + sujet + ' — ' + nom, from_name: 'Site Seven Action', replyto: mail, 'Nom': nom, 'Email': mail, 'Demande': sujet, 'Message': msg, 'Envoyé le': new Date().toLocaleString('fr-FR', { dateStyle: 'full', timeStyle: 'short' }), 'Depuis la page': 'Accueil – formulaire « Feuille de service »', botcheck: false }) })
         .then(function (r) { return r.json(); })
         .then(function (d) { if (!d.success) { throw new Error(d.message); } ['c-nom', 'c-email', 'c-msg'].forEach(function (n) { f(n).value = ''; }); show('notSent', false); show('sent', true); })
         .catch(function () { err.textContent = 'Oups, le message n’est pas parti. Réessaie dans un instant ou écris-nous à sevenaction34@gmail.com.'; err.hidden = false; })
@@ -1669,6 +1675,8 @@ body { margin: 0; background: #231F20; }
     }
   });
 })();
+
+document.addEventListener('input', function (e) { var t = e.target; if (t.classList && t.classList.contains('is-invalid') && t.value.trim()) { t.classList.remove('is-invalid'); t.setAttribute('aria-invalid', 'false'); } });
 </script>
 </body>
 </html>
