@@ -640,7 +640,7 @@ body { margin: 0; background: #231F20; }
 .reel-shade { background: linear-gradient(to top, rgba(15,12,13,.92) 0%, rgba(15,12,13,.25) 38%, transparent 60%); }
 .reel-title { position: absolute; z-index: 2; left: 48px; bottom: 54px; display: flex; flex-direction: column; align-items: flex-start; }
 .reel-title .serif { font-size: clamp(28px, 3.4vw, 50px); line-height: 1; color: #EDBE5C; }
-.reel-title b { display: inline-flex; align-items: baseline; font-size: clamp(44px, 6.4vw, 96px); font-weight: 900; line-height: .9; letter-spacing: -0.05em; color: #EEEDE9; text-transform: uppercase; }
+.reel-title b { display: inline-flex; align-items: baseline; font-size: clamp(44px, 6.4vw, 96px); font-weight: 800; line-height: .95; letter-spacing: -0.035em; color: #EEEDE9; padding-bottom: .04em; }
 .reel-title b .dot { width: .16em; height: .16em; color: #EDBE5C; }
 .reel-tags { margin-top: 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(238,237,233,.85); }
 .reel-time { position: absolute; z-index: 2; right: 48px; bottom: 58px; padding: 8px 14px; border-radius: 999px; background: rgba(15,12,13,.7); border: 1px solid rgba(237,190,92,.6); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #EDBE5C; }
@@ -800,6 +800,94 @@ body { margin: 0; background: #231F20; }
 .fdr-ctas .fdr-cta > .ic { margin-left: auto; flex: none; width: 36px; height: 36px; padding: 9px; box-sizing: border-box; border-radius: 50%; border: 1px solid rgba(238,237,233,.3); transition: background-color .25s, color .25s, transform .25s; }
 .fdr-ctas .fdr-cta:hover > .ic { background: #EEEDE9; color: #231F20; transform: translateX(3px); }
 .idbtn-txt { flex: 1; }
+/* ---------- Fiche technique ---------- */
+.fiche { grid-column: span 12; position: relative; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); overflow: hidden; border-radius: 18px; background: #0F0C0D; border: 1px solid rgba(238,237,233,.1); box-shadow: 0 50px 100px -60px rgba(0,0,0,.9); }
+.fiche-img { position: relative; margin: 0; min-height: 520px; color: rgba(238,237,233,.8); }
+.fiche-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.fiche:hover .fiche-img img { transform: scale(1.04); }
+.fiche-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, #0F0C0D 100%), linear-gradient(to top, rgba(15,12,13,.75), transparent 35%); }
+.fiche-img .c { z-index: 2; margin: 18px; }
+.fiche-tag { position: absolute; z-index: 2; left: 22px; bottom: 22px; font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #EDBE5C; }
+.fiche-body { position: relative; padding: 46px 48px 44px 40px; }
+.fiche-wm { position: absolute; right: 22px; top: -30px; font-size: 230px; font-weight: 900; line-height: 1; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px rgba(154,48,79,.45); pointer-events: none; user-select: none; }
+.fiche .fiche-k { position: relative; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(238,237,233,.6); }
+.fiche .fiche-h { position: relative; margin-top: 14px; display: flex; align-items: baseline; font-size: clamp(44px, 4.4vw, 68px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: #FFFFFF; }
+.fiche-h .serif { margin-right: .22em; color: #EDBE5C; letter-spacing: -0.01em; }
+.fiche-h .dot { width: .14em; height: .14em; color: #9A304F; }
+.fiche .fstats { position: relative; margin-top: 30px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid rgba(238,237,233,.14); }
+.fstats li { padding: 18px 16px 16px 0; display: flex; flex-direction: column; gap: 6px; }
+.fstats li + li { padding-left: 16px; border-left: 1px solid rgba(154,48,79,.55); }
+.fstats b { font-size: clamp(40px, 3.6vw, 56px); font-weight: 800; line-height: 1; letter-spacing: -0.045em; color: #FFFFFF; font-variant-numeric: tabular-nums; }
+.fstats small { margin-left: .08em; font-size: .36em; font-weight: 700; letter-spacing: 0; color: rgba(238,237,233,.7); }
+.fstats span:not(.cnt) { font-size: 13px; line-height: 1.35; color: rgba(238,237,233,.7); }
+.fiche .fiche-sub { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.fiche-sub p { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #EDBE5C; }
+.fiche .passes { margin-top: 16px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.pass { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 30px 14px 16px; border-radius: 10px; background: #EEEDE9; color: #231F20; box-shadow: 0 14px 24px -14px rgba(0,0,0,.8); transform-origin: 50% -14px; transition: transform .5s cubic-bezier(.3,1.6,.5,1), box-shadow .3s; overflow: hidden; }
+.pass::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--band); }
+.pass-hole { position: absolute; left: 50%; top: 13px; width: 26px; height: 6px; translate: -50% 0; border-radius: 999px; background: #0F0C0D; }
+.pass-k { font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A304F; }
+.pass b { font-size: 15px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+.pass-d { font-size: 12.5px; line-height: 1.35; color: #645C5E; }
+.pass:hover { transform: rotate(-4deg); box-shadow: 0 22px 30px -16px rgba(0,0,0,.9); }
+.pass:nth-child(even):hover { transform: rotate(4deg); }
+@media (max-width: 1100px) { .fiche .passes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .fiche { grid-template-columns: minmax(0, 1fr); }
+  .fiche-img { min-height: 340px; }
+  .fiche-img::after { background: linear-gradient(to top, #0F0C0D 0%, transparent 45%); }
+  .fiche-body { padding: 30px 22px 30px; }
+  .fiche .fstats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fstats li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .fstats li:nth-child(n+3) { border-top: 1px solid rgba(238,237,233,.1); }
+  .fiche-wm { font-size: 150px; top: -10px; }
+}
+@media (max-width: 480px) { .fiche .passes { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Parcours : frise verticale ---------- */
+.tl { margin-top: 90px; scroll-margin-top: 90px; }
+.tl-head { text-align: center; }
+.tl-head .block-h { justify-content: center; margin-top: 10px; }
+.fdr .tl-list { position: relative; margin: 40px auto 0; max-width: 860px; }
+.tl-list::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; translate: -50% 0; background: rgba(238,237,233,.14); }
+.tl-item { position: relative; display: flex; padding: 0 0 22px; }
+.tl-item:nth-child(odd) { justify-content: flex-start; padding-right: calc(50% + 32px); }
+.tl-item:nth-child(even) { justify-content: flex-end; padding-left: calc(50% + 32px); }
+.tl-item::before { content: ''; position: absolute; left: 50%; top: 0; height: 100%; width: 2px; translate: -50% 0; background: linear-gradient(#EDBE5C, #9A304F); transform-origin: top; }
+.tl-dot { position: absolute; left: 50%; top: 20px; width: 14px; height: 14px; translate: -50% 0; border-radius: 50%; background: #231F20; border: 2.5px solid #EDBE5C; box-shadow: 0 0 0 5px rgba(237,190,92,.12); z-index: 2; }
+.tl-card { position: relative; width: 100%; padding: 16px 18px 16px; border-radius: 12px; background: #2A2627; border: 1px solid rgba(238,237,233,.12); overflow: hidden; transition: border-color .3s, background-color .3s, transform .4s cubic-bezier(.2,.8,.2,1); }
+.tl-card:hover { border-color: rgba(237,190,92,.55); transform: translateY(-3px); }
+.tl-n { position: absolute; right: 12px; top: -8px; font-size: 62px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: #2A2627; text-shadow: 1px 0 0 rgba(237,190,92,.45), -1px 0 0 rgba(237,190,92,.45), 0 1px 0 rgba(237,190,92,.45), 0 -1px 0 rgba(237,190,92,.45), 1px 1px 0 rgba(237,190,92,.45), -1px -1px 0 rgba(237,190,92,.45), 1px -1px 0 rgba(237,190,92,.45), -1px 1px 0 rgba(237,190,92,.45); pointer-events: none; }
+.tl-card .tl-y { font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #EDBE5C; }
+.tl-card .tl-t { position: relative; margin-top: 6px; display: flex; align-items: baseline; font-size: 18px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #FFFFFF; }
+.tl-card .tl-p { position: relative; margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: rgba(238,237,233,.76); }
+.tl-img { display: block; margin-top: 12px; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 18%; border-radius: 10px; filter: grayscale(.2) contrast(1.05); }
+.tl-item.is-now .tl-card { background: #9A304F; border-color: #9A304F; }
+.tl-item.is-now .tl-n { display: none; }
+.tl-item.is-now .tl-y { color: #FFFFFF; }
+.tl-item.is-now .tl-p { color: rgba(255,255,255,.9); }
+.tl-item.is-now .tl-t .dot { width: .2em; height: .2em; color: #EDBE5C; }
+.tl-item.is-now .tl-dot { background: #EDBE5C; }
+.tl-ecu { float: right; width: 60px; height: 60px; margin: -6px -6px 0 12px; position: relative; }
+.tl-item:last-child { padding-bottom: 0; }
+@media (min-width: 761px) { .tl-item + .tl-item { margin-top: -44px; } }
+.tl-item:last-child::before { height: 30px; }
+/* Animation à l'apparition (activée par le script du site) */
+@media (prefers-reduced-motion: no-preference) {
+  .tl-list.armed .tl-item::before { transform: scaleY(0); transition: transform .9s cubic-bezier(.4,0,.2,1) .2s; }
+  .tl-list.armed .tl-dot { scale: 0; transition: scale .5s cubic-bezier(.3,1.6,.5,1); }
+  .tl-list.armed .tl-card { opacity: 0; translate: -40px 0; transition: opacity .7s ease, translate .8s cubic-bezier(.2,.8,.2,1), border-color .3s, background-color .3s, transform .4s cubic-bezier(.2,.8,.2,1); }
+  .tl-list.armed .tl-item:nth-child(even) .tl-card { translate: 40px 0; }
+  .tl-list.armed .tl-item.on::before { transform: none; }
+  .tl-list.armed .tl-item.on .tl-dot { scale: 1; }
+  .tl-list.armed .tl-item.on .tl-card { opacity: 1; translate: 0 0; transition-delay: .1s, .1s, 0s, 0s, 0s; }
+}
+@media (max-width: 760px) {
+  .tl-list::before, .tl-item::before, .tl-dot { left: 9px; }
+  .tl-item:nth-child(odd), .tl-item:nth-child(even) { padding: 0 0 20px 34px; justify-content: flex-start; }
+  .tl-list.armed .tl-item:nth-child(even) .tl-card { translate: -40px 0; }
+  .tl-n { font-size: 52px; }
+}
 /* ---------- Plan de coupe : écusson requin ---------- */
 .cut { position: relative; overflow: hidden; isolation: isolate; padding: 90px 0 110px; background: radial-gradient(closest-side, rgba(154,48,79,.55), transparent) 50% 55% / 70% 90% no-repeat, #141112; text-align: center; border-top: 1px solid rgba(237,190,92,.18); }
 .cut .cut-label { position: relative; z-index: 2; font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: rgba(237,190,92,.75); }
@@ -1406,24 +1494,31 @@ body { margin: 0; background: #231F20; }
       </div>
 
       <div class="bento">
-        <section class="tile t-stats reveal" aria-label="Jean Huynh en chiffres">
-          <p class="tile-k mono">En chiffres</p>
-          <ul class="tstats">
-            <li><b>5<small>e dan</small></b><span>Ceinture noire de taekwondo</span></li>
-            <li><b>21</b><span>Médailles aux championnats de France</span></li>
-            <li><b>15</b><span>Films &amp; séries depuis 2023</span></li>
-            <li><b>7<small>ans</small></b><span>Sur les plateaux</span></li>
-          </ul>
-        </section>
-        <section class="tile t-quals reveal r2" aria-label="Diplômes et encadrement">
-          <div class="tile-head"><p class="tile-k mono">Diplômes &amp; encadrement</p><a class="tile-link" href="#parcours">Son parcours <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
-          <ul class="quals-list">
-              <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11v5c3 2 7 2 10 0v-5"></path></svg><span><b>Licence STAPS</b>Préparation physique</span></li>
-              <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"></path></svg><span><b>CQP moniteur d’arts martiaux</b>Mention taekwondo</span></li>
-              <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg><span><b>BPJEPS · BNSSA · PSE2</b>Sécurité, sauvetage, premiers secours</span></li>
-              <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.4"></circle><path d="M3 19c.6-3 3-5 6-5s5.4 2 6 5M15 14.5c2.6-.4 5 1.2 5.6 4"></path></svg><span><b>Fondateur de H-Team Taekwondo</b>5 ans d’enseignement, enfants et adultes</span></li>
+        <article class="fiche reveal" aria-label="Fiche technique de Jean Huynh">
+          <figure class="fiche-img">
+            <img src="img/g-side.webp" alt="Jean Huynh en tenue et protections de cascade" loading="lazy" decoding="async">
+            <span class="c c-tl" aria-hidden="true"></span><span class="c c-tr" aria-hidden="true"></span><span class="c c-bl" aria-hidden="true"></span><span class="c c-br" aria-hidden="true"></span>
+            <figcaption class="fiche-tag mono">ID 07-JH · Fiche technique</figcaption>
+          </figure>
+          <div class="fiche-body">
+            <span class="fiche-wm" aria-hidden="true">07</span>
+            <p class="fiche-k mono">Jean Huynh · Président &amp; fondateur</p>
+            <h3 class="fiche-h"><span class="serif">Fiche</span> technique<span class="dot"></span></h3>
+            <ul class="fstats">
+              <li><b><span class="cnt" data-count="5">5</span><small>e dan</small></b><span>Ceinture noire de taekwondo</span></li>
+              <li><b><span class="cnt" data-count="21">21</span></b><span>Médailles aux championnats de France</span></li>
+              <li><b><span class="cnt" data-count="15">15</span></b><span>Films &amp; séries depuis 2023</span></li>
+              <li><b><span class="cnt" data-count="7">7</span><small>ans</small></b><span>Sur les plateaux</span></li>
             </ul>
-        </section>
+            <div class="fiche-sub"><p class="mono">Diplômes &amp; encadrement</p><a class="tile-link" href="#parcours">Son parcours <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a></div>
+            <ul class="passes">
+                <li class="pass" style="--band: #EDBE5C"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Formation</span><b>Licence STAPS</b><span class="pass-d">Préparation physique</span></li>
+                <li class="pass" style="--band: #9A304F"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Fédération</span><b>CQP moniteur d’arts martiaux</b><span class="pass-d">Mention taekwondo · FFTDA</span></li>
+                <li class="pass" style="--band: #E0566F"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Sécurité</span><b>BPJEPS · BNSSA · PSE2</b><span class="pass-d">Nautisme, sauvetage, premiers secours</span></li>
+                <li class="pass" style="--band: #EEEDE9"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Enseignement</span><b>Fondateur de H-Team Taekwondo</b><span class="pass-d">5 ans de cours, enfants et adultes</span></li>
+            </ul>
+          </div>
+        </article>
         <a class="tile t-press reveal" href="https://trustsportsmagazine.fr/tomber-juste-avec-jean-huynh-cascadeur/" target="_blank" rel="noopener">
           <img class="tp-logo" src="img/trust-logo.webp" alt="Trust Sports Magazine" loading="lazy" decoding="async">
           <span class="tp-txt"><span class="tile-k mono">Dans la presse · juillet 2025</span><b><span class="serif">« Tomber juste »</span> l’interview de Jean par Marie Gineste</b></span>
@@ -1431,28 +1526,20 @@ body { margin: 0; background: #231F20; }
         </a>
       </div>
 
-      <div class="fdr-strip reveal" id="parcours">
-        <div class="strip-head">
-          <div>
-            <p class="eyebrow" style="color: #EDBE5C">Parcours</p>
-            <h3 class="block-h"><span class="serif">Du tatami</span> au plateau<span class="dot"></span></h3>
-          </div>
-          <div class="strip-nav">
-            <button type="button" class="strip-btn" aria-label="Images précédentes" data-on="stripPrev"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-            <button type="button" class="strip-btn" aria-label="Images suivantes" data-on="stripNext"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
-          </div>
+      <div class="tl" id="parcours">
+        <div class="tl-head reveal">
+          <p class="eyebrow" style="color: #EDBE5C">Parcours</p>
+          <h3 class="block-h"><span class="serif">Du tatami</span> au plateau<span class="dot"></span></h3>
         </div>
-        <div class="strip" id="strip">
-          <ol class="film">
-            <li class="frame"><span class="fno">SA 07 — 01</span><span class="fy">2012 – 2015</span><h4>Licence STAPS</h4><p>Préparation physique et entraînement, spécialité gymnastique, à Montpellier.</p></li>
-            <li class="frame"><span class="fno">SA 07 — 02</span><span class="fy">2015 · 2019</span><h4>CQP moniteur d’arts martiaux</h4><p>Mention taekwondo, délivré par la FFTDA.</p></li>
-            <li class="frame"><span class="fno">SA 07 — 03</span><span class="fy">2016 – 2021</span><h4>Fondateur de H-Team Taekwondo</h4><p>Club fondé et entraîné à Montpellier, enfants et adultes, du loisir à la compétition.</p></li>
-            <li class="frame"><span class="fno">SA 07 — 04</span><span class="fy">2019 →</span><h4>Cascadeur professionnel</h4><p>Combats, chutes et doublures pour le cinéma, les séries et le spectacle.</p></li>
-            <li class="frame"><span class="fno">SA 07 — 05</span><span class="fy">2019 – 2020</span><h4>BPJEPS · BNSSA · PSE2</h4><p>Activités nautiques, sauvetage aquatique et premiers secours en équipe.</p></li>
-            <li class="frame"><span class="fno">SA 07 — 06</span><span class="fy">2020 →</span><h4>Formation continue cascade</h4><p>Stages au Campus Univers Cascades et auprès de régleurs professionnels.</p></li>
-            <li class="frame is-now"><span class="fno">SA 07 — 07</span><span class="fy">Aujourd’hui</span><h4>Seven Action<span class="dot"></span></h4><p>Il fonde l’association pour transmettre l’action, du tatami au plateau.</p></li>
-          </ol>
-        </div>
+        <ol class="tl-list">
+          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">01</span><p class="tl-y mono">2012 – 2015</p><h4 class="tl-t">Licence STAPS</h4><p class="tl-p">Préparation physique et entraînement, spécialité gymnastique, à Montpellier.</p></div></li>
+          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">02</span><p class="tl-y mono">2015 · 2019</p><h4 class="tl-t">CQP moniteur d’arts martiaux</h4><p class="tl-p">Mention taekwondo, délivré par la FFTDA.</p></div></li>
+          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">03</span><p class="tl-y mono">2016 – 2021</p><h4 class="tl-t">Fondateur de H-Team Taekwondo</h4><p class="tl-p">Club fondé et entraîné à Montpellier, enfants et adultes, du loisir à la compétition.</p></div></li>
+          <li class="tl-item has-img"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">04</span><p class="tl-y mono">2019 →</p><h4 class="tl-t">Cascadeur professionnel</h4><p class="tl-p">Combats, chutes et doublures pour le cinéma, les séries et le spectacle.</p><img class="tl-img" src="img/g-set.webp" alt="Jean Huynh sur un tournage, devant un véhicule militaire" loading="lazy" decoding="async"></div></li>
+          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">05</span><p class="tl-y mono">2019 – 2020</p><h4 class="tl-t">BPJEPS · BNSSA · PSE2</h4><p class="tl-p">Activités nautiques, sauvetage aquatique et premiers secours en équipe.</p></div></li>
+          <li class="tl-item has-img"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">06</span><p class="tl-y mono">2020 →</p><h4 class="tl-t">Formation continue cascade</h4><p class="tl-p">Stages au Campus Univers Cascades et auprès de régleurs professionnels.</p><img class="tl-img" src="img/g-hall.webp" alt="Jean Huynh à l’entraînement, en position de tir dans un couloir" loading="lazy" decoding="async"></div></li>
+          <li class="tl-item is-now"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">07</span><img class="tl-ecu" src="img/ecusson-requin-dore.webp" alt="" loading="lazy" decoding="async"><p class="tl-y mono">Depuis 2025</p><h4 class="tl-t">Seven Action<span class="dot"></span></h4><p class="tl-p">Il fonde l’association en 2025 pour transmettre l’action, du tatami au plateau.</p></div></li>
+        </ol>
       </div>
 
       <div class="reel reveal">
@@ -1782,6 +1869,31 @@ body { margin: 0; background: #231F20; }
       reel.appendChild(f);
     }
   });
+})();
+
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nums = document.querySelectorAll('.fiche .cnt');
+  if (nums.length) {
+    nums.forEach(function (n) { n.textContent = '0'; });
+    var io1 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io1.disconnect();
+        nums.forEach(function (n, i) {
+          var to = +n.dataset.count, t0 = null, dur = 1400 + i * 150;
+          function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / dur); n.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }
+          requestAnimationFrame(step);
+        });
+      });
+    }, { threshold: 0.4 });
+    io1.observe(document.querySelector('.fiche .fstats'));
+  }
+  var list = document.querySelector('.tl-list');
+  if (list) {
+    list.classList.add('armed');
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io2.unobserve(e.target); } }); }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+    list.querySelectorAll('.tl-item').forEach(function (it) { io2.observe(it); });
+  }
 })();
 
 (function () { var c = document.querySelector('.cut'); if (!c) return; if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return; c.classList.add('armed'); var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { c.classList.add('is-in'); io.disconnect(); } }); }, { threshold: 0.45 }); io.observe(c); })();
