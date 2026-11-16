@@ -800,6 +800,30 @@ body { margin: 0; background: #231F20; }
 .fdr-ctas .fdr-cta > .ic { margin-left: auto; flex: none; width: 36px; height: 36px; padding: 9px; box-sizing: border-box; border-radius: 50%; border: 1px solid rgba(238,237,233,.3); transition: background-color .25s, color .25s, transform .25s; }
 .fdr-ctas .fdr-cta:hover > .ic { background: #EEEDE9; color: #231F20; transform: translateX(3px); }
 .idbtn-txt { flex: 1; }
+/* ---------- Plan de coupe : écusson requin ---------- */
+.cut { position: relative; overflow: hidden; isolation: isolate; padding: 90px 0 110px; background: radial-gradient(closest-side, rgba(154,48,79,.55), transparent) 50% 55% / 70% 90% no-repeat, #141112; text-align: center; border-top: 1px solid rgba(237,190,92,.18); }
+.cut .cut-label { position: relative; z-index: 2; font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: rgba(237,190,92,.75); }
+.cut-stage { position: relative; z-index: 2; width: min(420px, 78vw); aspect-ratio: 1; margin: 34px auto 0; }
+.cut-emblem { position: absolute; inset: 0; }
+.cut-logo { display: block; width: 100%; height: 100%; filter: drop-shadow(0 30px 50px rgba(0,0,0,.6)); }
+.cut-glint { position: absolute; inset: 0; pointer-events: none; -webkit-mask: url(img/ecusson-requin-dore.webp) center / contain no-repeat; mask: url(img/ecusson-requin-dore.webp) center / contain no-repeat; background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.85) 50%, transparent 62%) 0 0 / 300% 100% no-repeat; background-position: 120% 0; mix-blend-mode: screen; }
+.cut-ring { position: absolute; left: 50%; top: 50%; width: 100%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; border: 1.5px solid rgba(237,190,92,.5); opacity: 0; }
+.cut-wave { position: absolute; left: -40%; right: -40%; top: 62%; width: 180%; height: 26px; opacity: 0; }
+@keyframes cutRise { 0% { opacity: 0; transform: translateY(140px) scale(.72) rotate(-6deg); filter: blur(16px); } 60% { opacity: 1; filter: blur(0); } 80% { transform: translateY(-10px) scale(1.03) rotate(1deg); } 100% { opacity: 1; transform: none; filter: none; } }
+@keyframes cutRing { 0% { opacity: 0; scale: .55; } 30% { opacity: .9; } 100% { opacity: 0; scale: 1.55; } }
+@keyframes cutWave { 0% { opacity: 0; transform: translateX(-12%) scaleY(.4); } 40% { opacity: .9; } 100% { opacity: 0; transform: translateX(8%) scaleY(1.4); } }
+@keyframes cutGlint { from { background-position: 120% 0; } to { background-position: -40% 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .cut.armed .cut-emblem { opacity: 0; }
+  .cut.armed.is-in .cut-emblem { animation: cutRise 1.5s cubic-bezier(.2,.8,.2,1) .1s both; }
+  .cut.armed.is-in .cut-ring { animation: cutRing 1.6s cubic-bezier(.2,.7,.3,1) both; }
+  .cut.armed.is-in .cut-ring.r1 { animation-delay: .75s; }
+  .cut.armed.is-in .cut-ring.r2 { animation-delay: .95s; }
+  .cut.armed.is-in .cut-ring.r3 { animation-delay: 1.15s; }
+  .cut.armed.is-in .cut-wave { animation: cutWave 1.6s ease-out .45s both; }
+  .cut.armed.is-in .cut-glint { animation: cutGlint 1.1s ease-in-out 1.7s both; }
+}
+@media (max-width: 640px) { .cut { padding: 64px 0 80px; } }
 /* ---------- Disciplines : allègement ---------- */
 .disc .h2 { font-weight: 800; letter-spacing: -0.035em; }
 .disc .disc-t { font-size: clamp(34px, 3.2vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
@@ -1496,6 +1520,19 @@ body { margin: 0; background: #231F20; }
     </div>
   </section>
 
+  <section class="cut" aria-label="Écusson Seven Action">
+    <div class="grain" aria-hidden="true"></div>
+    <p class="cut-label mono" aria-hidden="true">— Plan de coupe —</p>
+    <div class="cut-stage">
+      <span class="cut-ring r1" aria-hidden="true"></span><span class="cut-ring r2" aria-hidden="true"></span><span class="cut-ring r3" aria-hidden="true"></span>
+      <svg class="cut-wave" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 37.5 4 75 20 T 150 20 T 225 20 T 300 20 T 375 20 T 450 20 T 525 20 T 600 20" fill="none" stroke="#EDBE5C" stroke-width="2" stroke-linecap="round"></path></svg>
+      <div class="cut-emblem">
+        <img class="cut-logo" src="img/ecusson-requin-dore.webp" alt="Écusson Seven Action : un requin, avec la devise cinéma, cascade, arts martiaux" loading="lazy" decoding="async">
+        <span class="cut-glint" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
   <section class="evts" id="affiche">
     <div class="wrap">
       <div class="evts-head">
@@ -1746,6 +1783,8 @@ body { margin: 0; background: #231F20; }
     }
   });
 })();
+
+(function () { var c = document.querySelector('.cut'); if (!c) return; if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return; c.classList.add('armed'); var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { c.classList.add('is-in'); io.disconnect(); } }); }, { threshold: 0.45 }); io.observe(c); })();
 
 document.addEventListener('click', function (e) { var b = e.target.closest('[data-on="toggleArch"]'); if (!b) return; var open = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', String(open)); document.getElementById('past-list').classList.toggle('is-open', open); });
 
