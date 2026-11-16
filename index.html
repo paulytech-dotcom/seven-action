@@ -41,7 +41,7 @@ body { margin: 0; background: #231F20; }
 .slug { display: flex; align-items: center; gap: 14px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; line-height: 1.4; text-transform: uppercase; }
 .slug::before { content: ''; flex: none; width: 36px; height: 2px; background: currentColor; }
 .eyebrow { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; line-height: 1.4; text-transform: uppercase; }
-.h2 { font-size: clamp(48px, 7vw, 104px); font-weight: 900; line-height: 0.88; letter-spacing: -0.045em; text-wrap: balance; }
+.h2 { font-size: clamp(44px, 6vw, 88px); font-weight: 900; line-height: 0.88; letter-spacing: -0.045em; text-wrap: balance; }
 .h2 .serif { display: block; font-size: 0.9em; line-height: 1.02; letter-spacing: -0.012em; padding-bottom: 0.05em; }
 .h2 .dot { width: 0.17em; height: 0.17em; }
 .head2 { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 36px 72px; align-items: end; }
@@ -152,21 +152,21 @@ body { margin: 0; background: #231F20; }
 .leader-flash { position: absolute; inset: 0; background: #EEEDE9; opacity: 0; }
 
 /* ---------- Bandes ---------- */
-.bands { position: relative; z-index: 4; height: 210px; margin-top: -86px; background: linear-gradient(to bottom, transparent 86px, #EEEDE9 86px); overflow: hidden; pointer-events: none; }
-.band { position: absolute; left: -6%; width: 112%; height: 78px; display: flex; align-items: center; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(0,0,0,.45); }
-.band-a { top: 44px; background: #9A304F; color: #EEEDE9; rotate: -2.6deg; }
-.band-b { top: 80px; background: #EDBE5C; color: #231F20; rotate: 2deg; }
+.bands { position: relative; z-index: 4; height: 140px; margin-top: -58px; background: linear-gradient(to bottom, transparent 58px, #EEEDE9 58px); overflow: hidden; pointer-events: none; }
+.band { position: absolute; left: -6%; width: 112%; height: 50px; display: flex; align-items: center; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(0,0,0,.45); }
+.band-a { top: 32px; background: #9A304F; color: #EEEDE9; rotate: -1.8deg; }
+.band-b { top: 56px; background: #EDBE5C; color: #231F20; rotate: 1.4deg; }
 .band-track { display: flex; width: max-content; align-items: center; white-space: nowrap; }
-.band-item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-size: 44px; line-height: 1; }
+.band-item { display: inline-flex; align-items: center; gap: 20px; padding-right: 20px; font-size: 26px; line-height: 1; }
 .band-item .serif { font-size: 1.12em; }
 .band-item b { font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; }
-.band-item .dot { width: 12px; height: 12px; margin: 0; }
+.band-item .dot { width: 8px; height: 8px; margin: 0; }
 
 /* ---------- Synopsis ---------- */
 .syn { position: relative; background: #EEEDE9; color: #231F20; padding: 104px 0 140px; }
 .syn-h { margin-top: 34px; color: #9A304F; }
-.syn-h .l1 { display: block; font-size: clamp(40px, 6.4vw, 96px); line-height: 1.02; letter-spacing: -0.012em; }
-.syn-h .l2 { display: flex; align-items: baseline; font-size: clamp(96px, 17vw, 250px); font-weight: 900; line-height: .84; letter-spacing: -0.06em; }
+.syn-h .l1 { display: block; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -0.012em; }
+.syn-h .l2 { display: flex; align-items: baseline; font-size: clamp(60px, 8.4vw, 120px); font-weight: 900; line-height: .9; letter-spacing: -0.045em; }
 .syn-h .l2 .dot { width: .16em; height: .16em; margin-left: .05em; }
 .fall { display: inline-flex; }
 .fall > span { display: inline-block; transform-origin: 50% 100%; }
@@ -300,8 +300,12 @@ body { margin: 0; background: #231F20; }
 
 /* ---------- Évènements ---------- */
 .evts { position: relative; background: #EEEDE9; color: #231F20; padding: 120px 0 140px; }
-.evts-head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px 80px; align-items: center; }
-.evts-p { margin-top: 26px; max-width: 520px; font-size: 19px; line-height: 1.55; color: #4A4344; }
+.evts-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px 80px; align-items: end; }
+.evts-side { padding-left: 32px; border-left: 2px solid rgba(154,48,79,.35); }
+.evts-head .evts-side .evts-quote { margin-top: 0; }
+.t-count { display: inline-flex; align-items: baseline; gap: 6px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(238,237,233,.3); color: rgba(238,237,233,.82); font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.t-count b { font-weight: 700; color: #EDBE5C; }
+.evts-head .evts-p { margin-top: 26px; max-width: 520px; font-size: 19px; line-height: 1.55; color: #4A4344; }
 .sample-tag { margin-top: 22px; display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1.5px dashed #9A304F; border-radius: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7B203B; }
 .slate { justify-self: end; width: 100%; max-width: 540px; background: #231F20; color: #EEEDE9; border-radius: 12px; box-shadow: 0 40px 80px -40px rgba(35,31,32,.6); rotate: 1.2deg; }
 .slate-top { position: relative; height: 58px; }
@@ -434,7 +438,7 @@ body { margin: 0; background: #231F20; }
 
 
 /* ---------- Prochain stage (affiche) ---------- */
-.evts-quote { margin-top: 26px; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; color: #231F20; }
+.evts-head .evts-quote { margin-top: 26px; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; color: #231F20; }
 .evt-row { margin-top: 72px; }
 .ticket.is-next .t-title { font-size: clamp(30px, 3.4vw, 46px); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; line-height: .95; }
 .ticket.is-next .t-day { font-size: 50px; letter-spacing: -0.06em; }
@@ -931,6 +935,7 @@ body { margin: 0; background: #231F20; }
 }
 @media (max-width: 1000px) {
   .head2, .fdr-top, .fdr-mid, .contact-grid, .evts-head { grid-template-columns: minmax(0, 1fr); }
+  .evts-side { padding-left: 20px; }
   .slate { justify-self: start; }
   .portrait { max-width: 520px; }
 }
@@ -964,10 +969,10 @@ body { margin: 0; background: #231F20; }
   .tagline { letter-spacing: .2em; }
   .next-bar { gap: 6px 14px; padding: 14px 16px; }
   .nb-c { margin-left: 0; }
-  .bands { height: 170px; }
-  .band { height: 60px; }
-  .band-b { top: 76px; }
-  .band-item { gap: 18px; padding-right: 18px; font-size: 30px; }
+  .bands { height: 120px; }
+  .band { height: 40px; }
+  .band-b { top: 50px; }
+  .band-item { gap: 14px; padding-right: 14px; font-size: 19px; }
   .syn, .disc, .fdr, .evts, .contact { padding-top: 88px; padding-bottom: 100px; }
   .fdr-mid, .fdr-strip { margin-top: 88px; }
   .credits { height: 380px; }
@@ -1057,15 +1062,6 @@ body { margin: 0; background: #231F20; }
     .reveal { animation: revealUp linear both; animation-timeline: view(); animation-range: entry 0% entry 260px; }
     .reveal.r2 { animation-range: entry 40px entry 320px; }
     .reveal.r3 { animation-range: entry 80px entry 380px; }
-    .syn-h { view-timeline: --fall block; }
-    .fall > span, .syn-h .l2 > .dot { animation: drop linear both; animation-timeline: --fall; }
-    .fall > span:nth-child(1) { animation-range: entry 0% entry 55%; }
-    .fall > span:nth-child(2) { animation-range: entry 6% entry 61%; }
-    .fall > span:nth-child(3) { animation-range: entry 12% entry 67%; }
-    .fall > span:nth-child(4) { animation-range: entry 18% entry 73%; }
-    .fall > span:nth-child(5) { animation-range: entry 24% entry 79%; }
-    .fall > span:nth-child(6) { animation-range: entry 30% entry 85%; }
-    .syn-h .l2 > .dot { animation-range: entry 40% entry 100%; }
     .stat-num > span { animation: rollUp linear both; animation-timeline: view(); animation-range: entry 10% entry 100%; }
     .portrait-frame { view-timeline: --pf block; }
     .pf-focus { animation: afLock linear both; animation-timeline: --pf; animation-range: entry 35% entry 100%; }
@@ -1189,7 +1185,7 @@ body { margin: 0; background: #231F20; }
       <p class="slug reveal" style="color: #9A304F">SC. 01 — INT. Salle d’entraînement — Jour</p>
       <h2 class="syn-h" aria-label="Ici, on apprend à tomber.">
         <span class="serif l1" aria-hidden="true">Ici, on apprend à</span>
-        <span class="l2" aria-hidden="true"><span class="fall"><span>t</span><span>o</span><span>m</span><span>b</span><span>e</span><span>r</span></span><span class="dot"></span></span>
+        <span class="l2" aria-hidden="true">tomber<span class="dot"></span></span>
       </h2>
       <div class="syn-grid">
         <p class="syn-lead reveal">…et à se relever. À <em>frapper sans toucher</em>. À jouer l’action pour la caméra.</p>
@@ -1411,34 +1407,10 @@ body { margin: 0; background: #231F20; }
         <div>
           <p class="slug reveal" style="color: #9A304F">SC. 04 — À l’affiche</p>
           <h2 class="h2 reveal" style="margin-top: 30px; color: #9A304F"><span class="serif">Prochaine</span>séance<span class="dot"></span></h2>
+        </div>
+        <div class="evts-side">
           <p class="evts-quote serif reveal r2">Le cinéma d’action, de l’autre côté de la caméra.</p>
           <p class="evts-p reveal r2">Stage intensif de cascades physiques, sur 1 ou 2 jours, avec le cascadeur et chorégraphe Jamel Blissat. Places limitées, pré-inscription obligatoire par email.</p>
-        </div>
-        <div class="slate reveal r2">
-          <div class="slate-top" aria-hidden="true"><span class="slate-stick"></span><span class="slate-band"></span></div>
-          <div class="slate-body">
-            <div class="slate-grid" aria-hidden="true">
-              <div><span class="k">Prod.</span><span class="v">Seven Action</span></div>
-              <div><span class="k">Scène</span><span class="v">Cascades physiques</span></div>
-              <div><span class="k">Prise</span><span class="v">01</span></div>
-              <div><span class="k">Date</span><span class="v">05.12.26</span></div>
-            </div>
-            <span class="if" data-if="hasNext">
-              <p class="eyebrow count-label">Prochain clap dans</p>
-              <div class="count" role="timer" aria-label="Compte à rebours avant le prochain stage">
-                <div><b><span data-bind="cdD"></span></b><span>jours</span></div>
-                <div><b><span data-bind="cdH"></span></b><span>heures</span></div>
-                <div><b><span data-bind="cdM"></span></b><span>min</span></div>
-                <div><b><span data-bind="cdS"></span></b><span>sec</span></div>
-              </div>
-            </span>
-            <span class="if" data-if="noNext" hidden>
-              <p class="eyebrow count-label">Moteur… ça tourne</p>
-            </span>
-            <p class="slate-title">Stage intensif · Cascades physiques</p>
-            <p class="slate-sub">Sam. 5 &amp; dim. 6 décembre 2026 · Le Crès</p>
-            <a class="btn btn-gold slate-cta" href="mailto:sevenaction34@gmail.com?subject=Pr%C3%A9-inscription%20stage%20Cascades%20physiques">Je me pré-inscris <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          </div>
         </div>
       </div>
 
@@ -1451,6 +1423,7 @@ body { margin: 0; background: #231F20; }
                 <div class="t-tags">
                   <span class="t-type">Stage intensif · 1 jour / 2 jours</span>
                   <span class="t-next">Places limitées</span>
+                  <span class="if" data-if="hasNext"><span class="t-count">Clap dans <b><span data-bind="cdShort"></span></b></span></span>
                 </div>
                 <h3 class="t-title">Cascades physiques</h3>
                 <ul class="t-meta">
