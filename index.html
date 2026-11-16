@@ -523,6 +523,25 @@ body { margin: 0; background: #231F20; }
 .past-list { margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 14px; align-items: start; }
 .past { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 16px; border-radius: 12px; background: transparent; border: 1px dashed rgba(35,31,32,.22); transition: background-color .3s; }
 .past:hover { background: rgba(255,255,255,.55); }
+.past-toggle { flex: none; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid rgba(35,31,32,.3); background: transparent; color: #4A4344; font-family: 'Inter Tight', system-ui, sans-serif; font-size: 14.5px; font-weight: 700; cursor: pointer; transition: border-color .25s, background-color .25s, color .25s; }
+.past-toggle:hover { border-color: #9A304F; color: #9A304F; }
+.past-toggle .ic { width: 18px; height: 18px; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.past-toggle .pt-close { display: none; }
+.past-toggle[aria-expanded="true"] .pt-open { display: none; }
+.past-toggle[aria-expanded="true"] .pt-close { display: inline; }
+.past-toggle[aria-expanded="true"] .ic { transform: rotate(180deg); }
+.past-reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .65s cubic-bezier(.2,.8,.2,1); }
+.past-reveal.is-open { grid-template-rows: 1fr; }
+.past-inner { min-height: 0; overflow: hidden; }
+.past-reveal:not(.is-open) .past-inner { visibility: hidden; transition: visibility 0s .65s; }
+.past-reveal .past { opacity: 0; transform: translateY(22px) rotate(-1.2deg); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1), background-color .3s; }
+.past-reveal.is-open .past { opacity: 1; transform: none; }
+.past-reveal.is-open .past:nth-child(1) { transition-delay: .12s, .12s, 0s; }
+.past-reveal.is-open .past:nth-child(2) { transition-delay: .2s, .2s, 0s; }
+.past-reveal.is-open .past:nth-child(3) { transition-delay: .28s, .28s, 0s; }
+.past-reveal.is-open .past:nth-child(4) { transition-delay: .36s, .36s, 0s; }
+.past-reveal .past-list { margin-top: 24px; padding-bottom: 4px; }
+@media (prefers-reduced-motion: reduce) { .past-reveal, .past-reveal .past, .past-toggle .ic { transition: none; } }
 .past-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #645C5E; }
 .past-stamp { padding: 2px 7px; border: 1px solid rgba(35,31,32,.3); border-radius: 5px; color: #645C5E; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .past-date { font-size: 16px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; color: #4A4344; }
@@ -1460,9 +1479,11 @@ body { margin: 0; background: #231F20; }
             <p class="slug reveal" style="color: #645C5E">Archives</p>
             <h3 class="past-h reveal">Stages passés</h3>
           </div>
+          <button type="button" class="past-toggle reveal" aria-expanded="false" aria-controls="past-list" data-on="toggleArch"><span class="pt-open">Voir les 4 bobines</span><span class="pt-close">Masquer les archives</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
         </div>
+        <div class="past-reveal" id="past-list"><div class="past-inner">
         <ol class="past-list">
-          <li class="past reveal">
+          <li class="past">
             <div class="past-top"><span class="mono">Bobine 04</span><span class="past-stamp">Clap de fin</span></div>
             <p class="past-date">23 – 24 mai 2026</p>
             <h4 class="past-title">Stage cascade physique</h4>
@@ -1495,6 +1516,7 @@ body { margin: 0; background: #231F20; }
             <p class="past-place"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Castelnau-le-Lez</p>
           </li>
         </ol>
+        </div></div>
       </div>
     </div>
   </section>
@@ -1648,6 +1670,8 @@ body { margin: 0; background: #231F20; }
     }
   });
 })();
+
+document.addEventListener('click', function (e) { var b = e.target.closest('[data-on="toggleArch"]'); if (!b) return; var open = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', String(open)); document.getElementById('past-list').classList.toggle('is-open', open); });
 
 document.addEventListener('input', function (e) { var t = e.target; if (t.classList && t.classList.contains('is-invalid') && t.value.trim()) { t.classList.remove('is-invalid'); t.setAttribute('aria-invalid', 'false'); } });
 </script>
