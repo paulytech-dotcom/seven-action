@@ -50,6 +50,8 @@ body { margin: 0; background: #141112; }
 .btn:hover { transform: translateY(-2px); }
 .btn .ic { transition: transform .25s; }
 .btn:hover .ic { transform: translateX(3px); }
+.btn .ic-ticket { transform-origin: 50% 60%; }
+.btn:hover .ic-ticket { transform: rotate(-12deg) scale(1.08); }
 .btn-gold { background: #EDBE5C; color: #231F20; }
 .btn-gold:hover { background: #F4CD7A; color: #231F20; box-shadow: 0 16px 34px -14px rgba(237,190,92,.8); }
 .btn-ghost { background: transparent; border-color: rgba(238,237,233,.42); color: #EEEDE9; }
@@ -57,7 +59,7 @@ body { margin: 0; background: #141112; }
 .btn-ghost:hover .ic { transform: translateY(3px); }
 .btn-bordeaux { background: #9A304F; color: #FFFFFF; }
 .btn-bordeaux:hover { background: #7B203B; color: #FFFFFF; box-shadow: 0 16px 30px -14px rgba(123,32,59,.8); }
-.btn-sm { min-height: 44px; padding: 0 20px; font-size: 14.5px; }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 14.5px; gap: 9px; }
 
 /* Nav */
 .nav { position: sticky; top: 0; z-index: 50; height: 72px; margin-bottom: -72px; background: rgba(20,17,18,.72); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(238,237,233,.08); }
@@ -325,7 +327,7 @@ body { margin: 0; background: #141112; }
       <a class="brand" href="index.html" aria-label="Seven Action — accueil"><img src="img/logo-line-cream.webp" alt=""><span class="brand-back mono"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>Le site</span></a>
       <div class="nav-r">
         <span class="nav-places mono"><i></i>Places limitées</span>
-        <a class="btn btn-gold btn-sm" href="#inscription">Je m’inscris</a>
+        <a class="btn btn-gold btn-sm" href="#inscription"><svg class="ic ic-ticket" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v2M13 11v2M13 17v2"></path></svg>Je m’inscris</a>
       </div>
     </div>
   </header>

@@ -58,6 +58,8 @@ body { margin: 0; background: #231F20; }
 .btn:active { transform: translateY(0) scale(.98); }
 .btn .ic { transition: transform .25s cubic-bezier(.2,.8,.2,1); }
 .btn:hover .ic { transform: translateX(3px); }
+.btn .ic-ticket { transform-origin: 50% 60%; }
+.btn:hover .ic-ticket { transform: rotate(-12deg) scale(1.08); }
 .btn-gold { background: #EDBE5C; color: #231F20; }
 .btn-gold:hover { background: #F4CD7A; color: #231F20; box-shadow: 0 14px 30px -14px rgba(237,190,92,.75); }
 .btn-ghost { background: transparent; border-color: rgba(238,237,233,.42); color: #EEEDE9; }
@@ -70,7 +72,7 @@ body { margin: 0; background: #231F20; }
 .btn-cream:hover { background: #FFFFFF; color: #7B203B; }
 .btn-line { background: transparent; border-color: rgba(35,31,32,.3); color: #231F20; }
 .btn-line:hover { border-color: #231F20; color: #231F20; }
-.btn-sm { min-height: 44px; padding: 0 20px; font-size: 14.5px; }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 14.5px; gap: 9px; }
 
 /* ---------- Nav ---------- */
 .nav { position: sticky; top: 0; z-index: 50; height: 72px; margin-bottom: -72px; color: #EEEDE9; background: rgba(35,31,32,.74); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border-bottom: 1px solid rgba(238,237,233,.08); }
@@ -1261,7 +1263,7 @@ body { margin: 0; background: #231F20; }
         <a class="nav-link" href="#affiche">À l’affiche</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-gold btn-sm nav-cta" href="#affiche">Réserver un stage</a>
+      <a class="btn btn-gold btn-sm nav-cta" href="#affiche"><svg class="ic ic-ticket" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v2M13 11v2M13 17v2"></path></svg>Réserver un stage</a>
       <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu-mobile" data-on="toggleMenu">
         <span class="if" data-if="menuOpen" hidden><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>
         <span class="if" data-if="menuClosed"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span>
@@ -1274,7 +1276,7 @@ body { margin: 0; background: #231F20; }
         <a href="#fondateur" data-on="closeMenu">Le fondateur</a>
         <a href="#affiche" data-on="closeMenu">À l’affiche</a>
         <a href="#contact" data-on="closeMenu">Contact</a>
-        <a class="btn btn-gold" href="#affiche" data-on="closeMenu">Réserver un stage</a>
+        <a class="btn btn-gold" href="#affiche" data-on="closeMenu"><svg class="ic ic-ticket" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v2M13 11v2M13 17v2"></path></svg>Réserver un stage</a>
       </nav>
     </span>
   </header>
