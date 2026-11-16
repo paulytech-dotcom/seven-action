@@ -165,6 +165,15 @@ body { margin: 0; background: #141112; }
 .day-list b { font-size: 17px; font-weight: 800; }
 .day-list span:last-child { font-size: 14px; color: rgba(238,237,233,.7); }
 
+/* Photos d'ambiance en fond */
+.bgph { position: absolute; inset: 0; z-index: 0; pointer-events: none; background-size: cover; background-repeat: no-repeat; filter: grayscale(1) contrast(1.15); }
+.bgph.is-prog { background-image: url(img/stage-echauffement.webp); background-position: center 60%; opacity: .16; mix-blend-mode: luminosity; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 70%, transparent 100%); }
+.bgph.is-guest { left: auto; width: 55%; background-image: url(img/stage-jamel-demo.webp); background-position: 10% 30%; opacity: .2; -webkit-mask-image: linear-gradient(270deg, #000 0%, transparent 90%); mask-image: linear-gradient(270deg, #000 0%, transparent 90%); }
+.bgph.is-reg { background-image: url(img/stage-jamel-explique.webp); background-position: 30% 30%; opacity: .32; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 35%, transparent 75%); mask-image: linear-gradient(90deg, #000 0%, #000 35%, transparent 75%); }
+@media (prefers-reduced-motion: no-preference) { .bgph { animation: drift 30s ease-in-out infinite alternate; } }
+@keyframes drift { from { scale: 1; } to { scale: 1.08; } }
+.guest-grid { position: relative; z-index: 2; }
+
 /* Intervenant */
 .guest { position: relative; overflow: hidden; padding: 120px 0; background: #231F20; }
 .guest-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 60px; align-items: center; }
@@ -361,6 +370,7 @@ body { margin: 0; background: #141112; }
   </section>
 
   <section class="prog" id="programme">
+    <div class="bgph is-prog" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
     <div class="wrap" style="z-index: 2">
       <div class="prog-head reveal">
@@ -383,7 +393,10 @@ body { margin: 0; background: #141112; }
     </div>
   </section>
 
+
+
   <section class="guest" id="intervenant">
+    <div class="bgph is-guest" aria-hidden="true"></div>
     <div class="wrap guest-grid">
       <figure class="guest-photo reveal"><img src="img/jamel-full.webp" alt="Jamel Blissat" loading="lazy" decoding="async"><span class="c c-tl" aria-hidden="true"></span><span class="c c-tr" aria-hidden="true"></span><span class="c c-bl" aria-hidden="true"></span><span class="c c-br" aria-hidden="true"></span></figure>
       <div class="reveal r2">
@@ -398,6 +411,7 @@ body { margin: 0; background: #141112; }
   </section>
 
   <section class="reg" id="inscription">
+    <div class="bgph is-reg" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
     <div class="wrap reg-grid">
       <div class="reveal">
