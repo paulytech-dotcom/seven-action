@@ -278,7 +278,7 @@ body { margin: 0; background: #231F20; }
 .dist .ic { width: 22px; height: 22px; color: #EDBE5C; margin-top: 2px; }
 .dist p { font-size: 15.5px; line-height: 1.55; color: rgba(238,237,233,.86); }
 .dist strong { color: #EEEDE9; font-weight: 700; }
-.fdr-strip { margin-top: 120px; }
+.fdr-strip { scroll-margin-top: 90px;  margin-top: 120px; }
 .strip-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; }
 .strip-nav { display: flex; gap: 10px; }
 .strip-btn { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid rgba(238,237,233,.36); background: transparent; color: #EEEDE9; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
@@ -1258,11 +1258,11 @@ body { margin: 0; background: #231F20; }
               <span class="pf-focus"><span class="pf-af">AF</span></span>
             </div>
           </div>
-          <figcaption class="portrait-cap"><span>Jean Huynh</span><span>Fondateur</span><span>Prise 01</span></figcaption>
+          <figcaption class="portrait-cap"><span>Jean Huynh</span><span>Président</span><span>Prise 01</span></figcaption>
         </figure>
         <div class="fdr-txt">
           <p class="slug reveal" style="color: #EDBE5C">SC. 03 — Gros plan</p>
-          <p class="fdr-role-line serif reveal">Dans le rôle du fondateur</p>
+          <p class="fdr-role-line serif reveal">Fondateur et président</p>
           <h2 class="fdr-name reveal"><span class="serif">Jean</span><span class="fdr-last">Huynh<span class="dot"></span></span></h2>
           <p class="fdr-roles reveal"><span>Cascadeur</span><span aria-hidden="true">·</span><span>Préparateur physique</span><span aria-hidden="true">·</span><span>Entraîneur de taekwondo</span></p>
           <div class="fdr-bio reveal r2">
@@ -1292,7 +1292,7 @@ body { margin: 0; background: #231F20; }
           </ul>
         </section>
         <section class="tile t-quals reveal r2" aria-label="Diplômes et encadrement">
-          <div class="tile-head"><p class="tile-k mono">Diplômes &amp; encadrement</p><a class="tile-link" href="jean-huynh.html#parcours">Parcours complet <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+          <div class="tile-head"><p class="tile-k mono">Diplômes &amp; encadrement</p><a class="tile-link" href="#parcours">Son parcours <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
           <ul class="quals-list">
               <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11v5c3 2 7 2 10 0v-5"></path></svg><span><b>Licence STAPS</b>Préparation physique</span></li>
               <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"></path></svg><span><b>CQP moniteur d’arts martiaux</b>Mention taekwondo</span></li>
@@ -1305,6 +1305,30 @@ body { margin: 0; background: #231F20; }
           <span class="tp-txt"><span class="tile-k mono">Dans la presse · juillet 2025</span><b><span class="serif">« Tomber juste »</span> l’interview de Jean par Marie Gineste</b></span>
           <span class="tp-go">Lire <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
         </a>
+      </div>
+
+      <div class="fdr-strip reveal" id="parcours">
+        <div class="strip-head">
+          <div>
+            <p class="eyebrow" style="color: #EDBE5C">Parcours</p>
+            <h3 class="block-h"><span class="serif">Du tatami</span> au plateau<span class="dot"></span></h3>
+          </div>
+          <div class="strip-nav">
+            <button type="button" class="strip-btn" aria-label="Images précédentes" data-on="stripPrev"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+            <button type="button" class="strip-btn" aria-label="Images suivantes" data-on="stripNext"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+        <div class="strip" id="strip">
+          <ol class="film">
+            <li class="frame"><span class="fno">SA 07 — 01</span><span class="fy">2012 – 2015</span><h4>Licence STAPS</h4><p>Préparation physique et entraînement, spécialité gymnastique, à Montpellier.</p></li>
+            <li class="frame"><span class="fno">SA 07 — 02</span><span class="fy">2015 · 2019</span><h4>CQP moniteur d’arts martiaux</h4><p>Mention taekwondo, délivré par la FFTDA.</p></li>
+            <li class="frame"><span class="fno">SA 07 — 03</span><span class="fy">2016 – 2021</span><h4>Fondateur de H-Team Taekwondo</h4><p>Club fondé et entraîné à Montpellier, enfants et adultes, du loisir à la compétition.</p></li>
+            <li class="frame"><span class="fno">SA 07 — 04</span><span class="fy">2019 →</span><h4>Cascadeur professionnel</h4><p>Combats, chutes et doublures pour le cinéma, les séries et le spectacle.</p></li>
+            <li class="frame"><span class="fno">SA 07 — 05</span><span class="fy">2019 – 2020</span><h4>BPJEPS · BNSSA · PSE2</h4><p>Activités nautiques, sauvetage aquatique et premiers secours en équipe.</p></li>
+            <li class="frame"><span class="fno">SA 07 — 06</span><span class="fy">2020 →</span><h4>Formation continue cascade</h4><p>Stages au Campus Univers Cascades et auprès de régleurs professionnels.</p></li>
+            <li class="frame is-now"><span class="fno">SA 07 — 07</span><span class="fy">Aujourd’hui</span><h4>Seven Action<span class="dot"></span></h4><p>Il fonde l’association pour transmettre l’action, du tatami au plateau.</p></li>
+          </ol>
+        </div>
       </div>
 
       <div class="reel reveal">
@@ -1536,7 +1560,7 @@ body { margin: 0; background: #231F20; }
       </div>
       <div class="foot-credits">
         <div><p class="eyebrow">Une production</p><p>Seven Action</p><p class="foot-sub">Cinéma · Cascade · Arts martiaux</p></div>
-        <div><p class="eyebrow">Fondateur</p><p>Jean Huynh</p><p class="foot-sub">Cascadeur professionnel</p></div>
+        <div><p class="eyebrow">Président &amp; fondateur</p><p>Jean Huynh</p><p class="foot-sub">Cascadeur professionnel</p></div>
         <div><p class="eyebrow">Au programme</p><ul><li><a href="#asso">L’asso</a></li><li><a href="#disciplines">Disciplines</a></li><li><a href="#fondateur">Le fondateur</a></li><li><a href="#affiche">À l’affiche</a></li><li><a href="#contact">Contact</a></li></ul></div>
         <div><p class="eyebrow">Suivre l’asso</p><ul><li><a href="mailto:sevenaction34@gmail.com">sevenaction34@gmail.com</a></li><li><a class="foot-ig" href="https://www.instagram.com/7sevenaction" target="_blank" rel="noopener"><span class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="ig-dot" cx="17.2" cy="6.8" r="1.1"></circle></svg></span>Instagram</a></li></ul></div>
       </div>
