@@ -400,11 +400,11 @@ body { margin: 0; background: #231F20; }
 /* ---------- Contact ---------- */
 .contact { position: relative; overflow: hidden; background: #7B203B; color: #EEEDE9; padding: 130px 0 140px; }
 .contact-grid { z-index: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px 96px; align-items: center; }
-.contact-p { margin-top: 26px; max-width: 500px; font-size: 19px; line-height: 1.6; color: rgba(238,237,233,.88); }
-.socials { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-grid .contact-p { margin-top: 26px; max-width: 500px; font-size: 19px; line-height: 1.6; color: rgba(238,237,233,.88); }
+.contact-grid .socials { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
 .social { min-height: 48px; padding: 0 18px; display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid rgba(238,237,233,.38); border-radius: 999px; color: #EEEDE9; font-size: 15px; font-weight: 600; text-decoration: none; transition: background-color .2s, color .2s, border-color .2s; }
 .social:hover { background: #EEEDE9; border-color: #EEEDE9; color: #7B203B; }
-.sheet { position: relative; padding: 30px 30px 32px; background: #EEEDE9; color: #231F20; border-radius: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.55); rotate: -0.8deg; }
+.sheet { position: relative; padding: 30px 30px 32px; background: #EEEDE9; color: #231F20; border-radius: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.55); }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px; border-bottom: 2px solid #231F20; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
 .sheet-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px; }
 .sheet .field input, .sheet .field select, .sheet .field textarea { background: #FFFFFF; }
@@ -450,7 +450,7 @@ body { margin: 0; background: #231F20; }
 .t-mail { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-size: 15px; color: #4A4344; }
 .t-mail .ic { color: #9A304F; }
 .t-mail a { color: #7B203B; font-weight: 700; }
-.contact-mail { margin-top: 22px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 800; letter-spacing: -0.02em; }
+.contact-grid .contact-mail { margin-top: 22px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 800; letter-spacing: -0.02em; }
 .contact-mail a { color: #EEEDE9; text-decoration: underline; text-decoration-color: #EDBE5C; text-underline-offset: 6px; text-decoration-thickness: 2px; }
 .contact-mail a:hover { color: #EDBE5C; }
 @media (max-width: 1000px) {
@@ -777,6 +777,12 @@ body { margin: 0; background: #231F20; }
 .fdr-ctas .fdr-cta > .ic { margin-left: auto; flex: none; width: 36px; height: 36px; padding: 9px; box-sizing: border-box; border-radius: 50%; border: 1px solid rgba(238,237,233,.3); transition: background-color .25s, color .25s, transform .25s; }
 .fdr-ctas .fdr-cta:hover > .ic { background: #EEEDE9; color: #231F20; transform: translateX(3px); }
 .idbtn-txt { flex: 1; }
+/* ---------- Formulaire de contact ---------- */
+.hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.sheet .sheet-err { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: rgba(154,48,79,.1); border: 1px solid rgba(154,48,79,.45); color: #7B203B; font-size: 14px; font-weight: 600; line-height: 1.4; }
+.sheet .sheet-err[hidden] { display: none; }
+.sheet-send[disabled] { opacity: .65; cursor: progress; transform: none; }
+.sheet .sheet-legal { margin-top: 14px; font-size: 12px; line-height: 1.5; color: rgba(35,31,32,.6); }
 /* ---------- Fondateur : bento ---------- */
 .fdr-top { align-items: center; }
 .fdr-bio { max-width: 620px; }
@@ -1533,18 +1539,20 @@ body { margin: 0; background: #231F20; }
         <div class="sheet-head"><span>Feuille de service</span><span>N° 07</span></div>
         <span class="if" data-if="notSent">
           <div class="sheet-grid">
-            <label class="field"><span>Prénom et nom</span><input type="text" name="c-nom" placeholder="Camille Martin"></label>
-            <label class="field"><span>Email</span><input type="email" name="c-email" placeholder="ton@email.fr"></label>
+            <label class="field"><span>Prénom et nom</span><input type="text" name="c-nom" placeholder="Prénom Nom" autocomplete="name" required maxlength="120"></label>
+            <label class="field"><span>Email</span><input type="email" name="c-email" placeholder="adresse@email.fr" autocomplete="email" required maxlength="160"></label>
             <label class="field full"><span>Ta demande</span><select name="c-sujet"><option>Un stage ou un atelier</option><option>Rejoindre l’association</option><option>Un projet de tournage</option><option>Autre chose</option></select></label>
-            <label class="field full"><span>Message</span><textarea name="c-msg" rows="4" placeholder="Ton niveau, tes envies, ton projet…"></textarea></label>
+            <label class="field full"><span>Message</span><textarea name="c-msg" rows="4" placeholder="Ton niveau, tes envies, ton projet…" required maxlength="4000"></textarea></label>
           </div>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="sheet-err" role="alert" hidden></p>
           <button type="button" class="btn btn-bordeaux sheet-send" data-on="sendContact">Envoyer · Action&nbsp;! <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          <p class="sheet-legal">Tes informations servent uniquement à te répondre. Elles ne sont ni conservées sur le site, ni transmises à des tiers.</p>
         </span>
         <span class="if" data-if="sent" hidden>
           <div class="sheet-done" role="status">
             <p class="done-title"><span class="serif">Bien reçu.</span><span>Coupez<span class="dot"></span></span></p>
             <p class="done-text">Ton message est arrivé sur le plateau. On te répond très vite.</p>
-            <p class="done-note mono">Maquette&nbsp;: aucune donnée n’est envoyée.</p>
             <button type="button" class="btn btn-line btn-sm" data-on="resetContact">Nouveau message</button>
           </div>
         </span>
@@ -1574,7 +1582,8 @@ body { margin: 0; background: #231F20; }
 
 
 </div>
-<script>
+<script>var W3F_KEY = "47d91ac9-9ac0-4f8b-9ec4-1fd58c767c04";
+
 (function () {
   var start = Date.parse('2026-12-05T10:00:00+01:00');
   function pad(n) { return String(n).padStart(2, '0'); }
@@ -1617,7 +1626,23 @@ body { margin: 0; background: #231F20; }
   var actions = {
     toggleMenu: function () { setMenu(!menuOpen); },
     closeMenu: function () { setMenu(false); },
-    sendContact: function () { show('notSent', false); show('sent', true); },
+    sendContact: function () {
+      var box = document.querySelector('.sheet');
+      var f = function (n) { return box.querySelector('[name="' + n + '"]'); };
+      var err = box.querySelector('.sheet-err'), btn = box.querySelector('.sheet-send');
+      var nom = f('c-nom').value.trim(), mail = f('c-email').value.trim(), sujet = f('c-sujet').value, msg = f('c-msg').value.trim();
+      err.hidden = true;
+      if (!nom || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail) || !msg) { err.textContent = 'Merci d’indiquer ton nom, un email valide et ton message.'; err.hidden = false; return; }
+      if (f('botcheck').checked) { return; }
+      if (!W3F_KEY) { show('notSent', false); show('sent', true); return; }
+      var label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Envoi en cours…';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ access_key: W3F_KEY, subject: 'Site Seven Action — ' + sujet, from_name: 'Site Seven Action', name: nom, email: mail, demande: sujet, message: msg, botcheck: false }) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (!d.success) { throw new Error(d.message); } ['c-nom', 'c-email', 'c-msg'].forEach(function (n) { f(n).value = ''; }); show('notSent', false); show('sent', true); })
+        .catch(function () { err.textContent = 'Oups, le message n’est pas parti. Réessaie dans un instant ou écris-nous à sevenaction34@gmail.com.'; err.hidden = false; })
+        .then(function () { btn.disabled = false; btn.innerHTML = label; });
+    },
     resetContact: function () { show('notSent', true); show('sent', false); },
     lbClose: function () { lbIndex = -1; show('lbOpen', false); },
     lbPrev: function () { openLb(lbIndex - 1); },
