@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Seven Action — Cinéma, cascade, arts martiaux</title>
-<meta name="description" content="Seven Action, association de cinéma, cascade et arts martiaux fondée par le cascadeur Jean Huynh : stages, ateliers et tournages.">
-<meta property="og:title" content="Seven Action — Cinéma, cascade, arts martiaux">
-<meta property="og:description" content="Seven Action, association de cinéma, cascade et arts martiaux fondée par le cascadeur Jean Huynh : stages, ateliers et tournages.">
+<title>Seven Action — Cascade, cinéma, spectacle, arts martiaux</title>
+<meta name="description" content="Seven Action fait venir des cascadeurs et des professionnels du cinéma et du spectacle dans le Sud de la France, pour des stages de cascade, de combat scénique et d’arts martiaux ouverts à tous.">
+<meta property="og:title" content="Seven Action — Cascade, cinéma, spectacle, arts martiaux">
+<meta property="og:description" content="Seven Action fait venir des cascadeurs et des professionnels du cinéma et du spectacle dans le Sud de la France, pour des stages de cascade, de combat scénique et d’arts martiaux ouverts à tous.">
 <meta property="og:image" content="img/hero-bg.webp">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#231F20">
@@ -469,9 +469,9 @@ body { margin: 0; background: #231F20; }
 
 /* ---------- Logo officiel ---------- */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-.logo-img { display: block; width: clamp(280px, 52vw, 760px); aspect-ratio: 1400 / 746; background: url(img/logo-stack-gold.webp) left center / contain no-repeat; }
-.hero.theme-bordeaux .logo-img { background-image: url(img/logo-stack-white.webp); }
-.hero.theme-profond .logo-img { background-image: url(img/logo-stack-cream.webp); }
+.logo-img { display: block; width: clamp(280px, 52vw, 760px); aspect-ratio: 1400 / 746; background: url(img/logo2-logo-stack-gold.webp) left center / contain no-repeat; }
+.hero.theme-bordeaux .logo-img { background-image: url(img/logo2-logo-stack-white.webp); }
+.hero.theme-profond .logo-img { background-image: url(img/logo2-logo-stack-cream.webp); }
 .brand-img { display: block; height: 30px; width: auto; }
 .foot-logo-img { display: block; width: clamp(260px, 46vw, 640px); height: auto; }
 @media (prefers-reduced-motion: no-preference) {
@@ -481,9 +481,9 @@ body { margin: 0; background: #231F20; }
 
 
 /* ---------- Disciplines (version légère) ---------- */
-.discs { margin-top: 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.35); }
-.disc-item { position: relative; padding: 36px 40px 8px 0; }
-.disc-item + .disc-item { padding-left: 40px; border-left: 1px solid rgba(255,255,255,.22); }
+.discs { margin-top: 80px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.35); }
+.disc-item { position: relative; padding: 36px 30px 8px 0; }
+.disc-item + .disc-item { padding-left: 30px; border-left: 1px solid rgba(255,255,255,.22); }
 .disc-bar { width: 88px; height: 8px; border-radius: 2px; background: repeating-linear-gradient(-45deg, #EEEDE9 0 8px, #231F20 8px 16px); background-size: 200% 100%; transition: width .5s cubic-bezier(.2,.8,.2,1); }
 .disc-no { margin-top: 22px; display: flex; gap: 18px; font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.78); }
 .disc-t { margin-top: 12px; display: flex; align-items: baseline; font-size: clamp(40px, 3.8vw, 56px); font-weight: 900; line-height: .95; letter-spacing: -0.05em; color: #EDBE5C; transition: translate .4s cubic-bezier(.2,.8,.2,1); }
@@ -499,6 +499,11 @@ body { margin: 0; background: #231F20; }
   .disc-item:hover .disc-bar { animation: barSlide 1.2s linear infinite; }
 }
 @keyframes barSlide { to { background-position: -32px 0; } }
+@media (max-width: 1180px) and (min-width: 901px) {
+  .discs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .disc-item:nth-child(3) { padding-left: 0; border-left: 0; }
+  .disc-item:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.22); margin-top: 20px; }
+}
 @media (max-width: 900px) {
   .discs { grid-template-columns: minmax(0, 1fr); }
   .disc-item, .disc-item + .disc-item { padding: 32px 0 28px; border-left: 0; }
@@ -900,7 +905,7 @@ body { margin: 0; background: #231F20; }
 .cut-stage { position: relative; z-index: 2; width: min(420px, 78vw); aspect-ratio: 1; margin: 34px auto 0; }
 .cut-emblem { position: absolute; inset: 0; }
 .cut-logo { display: block; width: 100%; height: 100%; filter: drop-shadow(0 30px 50px rgba(0,0,0,.6)); }
-.cut-glint { position: absolute; inset: 0; pointer-events: none; -webkit-mask: url(img/ecusson-requin-dore.webp) center / contain no-repeat; mask: url(img/ecusson-requin-dore.webp) center / contain no-repeat; background: linear-gradient(160deg, transparent 0%, transparent 38%, rgba(255,255,255,.12) 42%, rgba(255,255,255,.95) 46%, rgba(255,246,220,.35) 48.5%, rgba(255,255,255,.85) 50.5%, rgba(255,255,255,.12) 54%, transparent 58%, transparent 100%) 0 0 / 100% 300% no-repeat; background-position: 0 100%; mix-blend-mode: screen; }
+.cut-glint { position: absolute; inset: 0; pointer-events: none; -webkit-mask: url(img/ecusson-dore-v2.webp) center / contain no-repeat; mask: url(img/ecusson-dore-v2.webp) center / contain no-repeat; background: linear-gradient(160deg, transparent 0%, transparent 38%, rgba(255,255,255,.12) 42%, rgba(255,255,255,.95) 46%, rgba(255,246,220,.35) 48.5%, rgba(255,255,255,.85) 50.5%, rgba(255,255,255,.12) 54%, transparent 58%, transparent 100%) 0 0 / 100% 300% no-repeat; background-position: 0 100%; mix-blend-mode: screen; }
 .cut-ring { position: absolute; left: 50%; top: 50%; width: 100%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; border: 1.5px solid rgba(237,190,92,.5); opacity: 0; }
 @keyframes cutRise { 0% { opacity: 0; transform: translateY(140px) scale(.72) rotate(-6deg); filter: blur(16px); } 60% { opacity: 1; filter: blur(0); } 80% { transform: translateY(-10px) scale(1.03) rotate(1deg); } 100% { opacity: 1; transform: none; filter: none; } }
 @keyframes cutRing { 0% { opacity: 0; scale: .55; } 30% { opacity: .9; } 100% { opacity: 0; scale: 1.55; } }
@@ -922,7 +927,7 @@ body { margin: 0; background: #231F20; }
 @media (max-width: 640px) { .cut { padding: 64px 0 80px; } }
 /* ---------- Disciplines : allègement ---------- */
 .disc .h2 { font-weight: 800; letter-spacing: -0.035em; }
-.disc .disc-t { font-size: clamp(34px, 3.2vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
+.disc .disc-t { display: block; font-size: clamp(32px, 2.9vw, 44px); font-weight: 800; letter-spacing: -0.035em; }
 .disc .disc-intro p + p { margin-top: 14px; }
 .disc .disc-no { margin-top: 22px; }
 .disc .disc-t { margin-top: 12px; }
@@ -1246,6 +1251,85 @@ body { margin: 0; background: #231F20; }
     .pf-focus { animation: afLock linear both; animation-timeline: --pf; animation-range: entry 35% entry 100%; }
   }
 }
+
+
+/* Archives : stages passés (style carrousel Instagram) */
+.gen { position: relative; overflow: hidden; padding: 130px 0 120px; background: #EEEDE9; color: #231F20; }
+.gen::before, .gen::after { content: ''; position: absolute; left: 0; right: 0; height: 10px; background: repeating-linear-gradient(90deg, transparent 0 14px, rgba(154,48,79,.18) 14px 34px); }
+.gen::before { top: 22px; }
+.gen::after { bottom: 22px; }
+.gen .slug { color: #9A304F; }
+.gen .gen-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px 60px; align-items: end; }
+.gen .gen-h { margin-top: 22px; display: flex; flex-direction: column; line-height: .9; }
+.gen .gen-h .serif { font-size: clamp(52px, 6.4vw, 92px); color: #9A304F; }
+.gen .gen-h b { margin-left: .9em; font-size: clamp(64px, 8.4vw, 124px); font-weight: 900; letter-spacing: -0.05em; color: #9A304F; text-shadow: 5px 5px 0 #EEEDE9, 6px 6px 0 rgba(154,48,79,.45); }
+.gen .gen-h .dot { width: .14em; height: .14em; color: #9A304F; }
+.gen .gen-intro { font-size: 18px; line-height: 1.65; color: #4A4344; }
+.gen .gen-avs { margin-top: 22px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.gen .gen-av { display: flex; }
+.gen .gen-av img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 3px solid #EEEDE9; box-shadow: 0 0 0 2px #9A304F; }
+.gen .gen-av img + img { margin-left: -12px; }
+.gen .gen-with { flex: 1 1 220px; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; line-height: 1.6; color: #9A304F; }
+.gen .gstats { margin-top: 60px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid rgba(154,48,79,.25); }
+.gen .gstats li { display: flex; align-items: center; gap: 18px; padding: 24px; }
+.gen .gstats li + li { border-left: 1px solid rgba(154,48,79,.2); }
+.gen .gstats li:first-child { padding-left: 0; }
+.gen .gstats b { display: inline-flex; align-items: flex-start; font-size: clamp(54px, 5.6vw, 80px); font-weight: 900; line-height: .9; letter-spacing: -0.05em; color: #9A304F; font-variant-numeric: tabular-nums; }
+.gen .gstats b i { font-style: normal; font-size: .5em; color: #9A304F; margin-left: .04em; }
+.gen .gstats span:not(.cnt) { font-size: 14.5px; line-height: 1.4; color: #4A4344; }
+.gen .bobs { margin-top: 60px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.gen .bob { position: relative; overflow: hidden; padding: 30px 32px 26px; border-radius: 18px; background: #F6F5F1; box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 30px 60px -40px rgba(123,32,59,.45), 0 0 0 1px rgba(154,48,79,.12); transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
+.gen .bob:hover { transform: translateY(-6px); box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 40px 70px -40px rgba(123,32,59,.6), 0 0 0 1px rgba(154,48,79,.25); }
+.gen .bob-ghost { position: absolute; right: -18px; bottom: -60px; font-size: 280px; font-weight: 900; line-height: 1; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px rgba(154,48,79,.14); pointer-events: none; }
+.gen .bob-top { display: flex; justify-content: space-between; gap: 10px; font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A304F; }
+.gen .bob-date { position: relative; margin-top: 18px; display: flex; align-items: baseline; gap: 10px; color: #9A304F; }
+.gen .bob-date b { font-size: clamp(54px, 5vw, 72px); font-weight: 900; line-height: .9; letter-spacing: -0.05em; text-shadow: 4px 4px 0 #F6F5F1, 5px 5px 0 rgba(154,48,79,.5); }
+.gen .bob-date .serif { font-size: clamp(26px, 2.4vw, 34px); }
+.gen .bob-body { position: relative; margin-top: 22px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; align-items: end; }
+.gen .bob-ph { position: relative; padding: 0 0 18px 12px; }
+.gen .bob-ph::before { content: ''; position: absolute; left: 0; top: 12px; right: 16px; bottom: 0; border-radius: 4px; background: #9A304F; rotate: -2.5deg; }
+.gen .bob-frame { position: relative; display: grid; gap: 5px; padding: 6px; border-radius: 4px; background: #FFFFFF; box-shadow: 0 18px 30px -16px rgba(35,31,32,.6); rotate: 1.2deg; transition: rotate .45s cubic-bezier(.2,.8,.2,1); }
+.gen .bob:hover .bob-frame { rotate: 0deg; }
+.gen .bob-frame img { display: block; width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: 50% 25%; border-radius: 2px; }
+.gen .bob-ph.is-duo .bob-frame img { aspect-ratio: 4 / 2.6; object-position: 50% 40%; }
+.gen .bob-ph.is-duo .bob-frame img + img { aspect-ratio: 4 / 2; object-position: 30% 30%; }
+.gen .bob-stamp { position: absolute; left: -14px; bottom: -6px; display: grid; place-items: center; width: 94px; height: 94px; border-radius: 50%; background: #F6F5F1; border: 2px solid #9A304F; color: #9A304F; rotate: -12deg; box-shadow: 0 10px 20px -12px rgba(35,31,32,.6); }
+.gen .bob-stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.gen .bob-stamp text { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 8.4px; font-weight: 700; letter-spacing: .14em; fill: #9A304F; }
+.gen .bob-stamp b { position: relative; font-size: 32px; font-weight: 900; letter-spacing: -0.05em; }
+.gen .bob-txt { position: relative; padding-bottom: 20px; }
+.gen .bob-t { font-size: 22px; line-height: 1.2; color: #9A304F; }
+.gen .bob-n { margin-top: 18px; font-size: clamp(34px, 3.2vw, 46px); font-weight: 900; line-height: .95; letter-spacing: -0.04em; color: #9A304F; }
+.gen .bob-n .dot { color: #9A304F; }
+.gen .bob-r { margin-top: 14px; font-size: 15px; font-weight: 700; line-height: 1.35; color: #231F20; }
+.gen .bob-c { margin-top: 8px; font-size: 14px; line-height: 1.5; color: #645C5E; }
+.gen .bob-tags { position: relative; margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.gen .bob-tags li { padding: 6px 12px; border-radius: 999px; border: 1.5px solid #9A304F; font-size: 13px; font-weight: 700; color: #9A304F; }
+.gen .bob-place { position: relative; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(154,48,79,.2); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #645C5E; }
+.gen .gen-next { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px 40px; padding: 34px 38px; border-radius: 18px; background: #9A304F; color: #FFFFFF; }
+.gen .gen-next-k { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #EDBE5C; }
+.gen .gen-next-t { margin-top: 8px; font-size: clamp(28px, 3.2vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.gen .gen-next-t .serif { font-weight: 400; color: #EDBE5C; }
+.gen .gen-next-t .dot { color: #EDBE5C; }
+.gen .gen-next-p { margin-top: 10px; max-width: 600px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.88); }
+@media (max-width: 1100px) { .gen .bobs { grid-template-columns: minmax(0, 1fr); max-width: 680px; margin-inline: auto; } }
+@media (max-width: 800px) {
+  .gen { padding: 96px 0 90px; }
+  .gen .gen-head { grid-template-columns: minmax(0, 1fr); }
+  .gen .gstats { grid-template-columns: minmax(0, 1fr); }
+  .gen .gstats li, .gen .gstats li:first-child { padding: 16px 0; }
+  .gen .gstats li + li { border-left: 0; border-top: 1px solid rgba(154,48,79,.2); }
+}
+@media (max-width: 560px) {
+  .gen .bob { padding: 24px 20px 22px; }
+  .gen .bob-body { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .gen .bob-ph { max-width: 300px; }
+  .gen .bob-txt { padding-bottom: 0; }
+  .gen .gen-next { padding: 28px 22px; }
+  .gen .gen-next .btn { width: 100%; }
+}
+
+
 </style>
 <style>.if { display: contents; } .if[hidden] { display: none !important; }</style>
 </head>
@@ -1258,7 +1342,7 @@ body { margin: 0; background: #231F20; }
       <nav class="nav-links" aria-label="Navigation principale">
         <a class="nav-link" href="#asso">L’asso</a>
         <a class="nav-link" href="#disciplines">Disciplines</a>
-        <a class="nav-link" href="#fondateur">Le fondateur</a>
+        <a class="nav-link" href="#intervenants">Nos stages</a>
         <a class="nav-link" href="#affiche">À l’affiche</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
@@ -1272,7 +1356,7 @@ body { margin: 0; background: #231F20; }
       <nav class="mobile-menu" id="menu-mobile" aria-label="Navigation mobile">
         <a href="#asso" data-on="closeMenu">L’asso</a>
         <a href="#disciplines" data-on="closeMenu">Disciplines</a>
-        <a href="#fondateur" data-on="closeMenu">Le fondateur</a>
+        <a href="#intervenants" data-on="closeMenu">Nos stages</a>
         <a href="#affiche" data-on="closeMenu">À l’affiche</a>
         <a href="#contact" data-on="closeMenu">Contact</a>
         <a class="btn btn-gold" href="#affiche" data-on="closeMenu"><svg class="ic ic-ticket" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v2M13 11v2M13 17v2"></path></svg>Réserver un stage</a>
@@ -1280,7 +1364,7 @@ body { margin: 0; background: #231F20; }
     </span>
   </header>
 
-  <section class="hero theme-encre with-intro" id="accueil" aria-label="Seven Action, cinéma, cascade et arts martiaux">
+  <section class="hero theme-encre with-intro" id="accueil" aria-label="Seven Action, cascade, cinéma, spectacle et arts martiaux">
     <div class="grain" aria-hidden="true"></div>
     <div class="hero-photo" aria-hidden="true"></div>
     <div class="hero-shade" aria-hidden="true"></div>
@@ -1315,12 +1399,12 @@ body { margin: 0; background: #231F20; }
     <div class="wrap hero-in">
       <div class="hero-grid">
         <div>
-          <h1 class="logo"><span class="sr-only">Seven Action — Cinéma, cascade, arts martiaux</span><span class="logo-img" aria-hidden="true"></span></h1>
+          <h1 class="logo"><span class="sr-only">Seven Action — Cascade, cinéma, spectacle, arts martiaux</span><span class="logo-img" aria-hidden="true"></span></h1>
         </div>
         <div class="hero-copy">
-          <p class="hero-lead">L’association où l’on apprend l’action comme au cinéma&nbsp;: <strong>chutes, combat scénique et jeu face caméra</strong>, avec un cascadeur en activité.</p>
+          <p class="hero-lead">L’association qui fait venir <strong>des cascadeurs et des pros du cinéma et du spectacle</strong> dans le Sud de la France, pour des stages ouverts à tous.</p>
           <div class="hero-ctas">
-            <a class="btn btn-gold" href="#affiche">Voir les prochaines séances <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a class="btn btn-gold" href="#affiche">Voir le prochain stage <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <a class="btn btn-ghost" href="#asso">Découvrir l’asso</a>
           </div>
         </div>
@@ -1337,12 +1421,12 @@ body { margin: 0; background: #231F20; }
   <div class="bands" aria-hidden="true">
     <div class="band band-a">
       <div class="band-track">
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
-        <span class="band-item"><span class="serif">Cinéma</span><span class="dot"></span><b>Cascade</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
+        <span class="band-item"><b>Cascade</b><span class="dot"></span><span class="serif">Cinéma</span><span class="dot"></span><b>Spectacle</b><span class="dot"></span><span class="serif">Arts martiaux</span><span class="dot"></span></span>
       </div>
     </div>
     <div class="band band-b">
@@ -1368,26 +1452,26 @@ body { margin: 0; background: #231F20; }
       </h2>
       <div class="syn-grid">
         <p class="syn-lead reveal">…et à se relever. À <em>frapper sans toucher</em>. À jouer l’action pour la caméra.</p>
-        <p class="syn-p reveal r2">Seven Action réunit le cinéma, la cascade et les arts martiaux dans une même association. Stages, ateliers et tournages&nbsp;: on y apprend les techniques des plateaux, en sécurité, avec un cascadeur professionnel.</p>
+        <p class="syn-p reveal r2">Seven Action organise des stages de cascade, de combat scénique, de spectacle et d’arts martiaux. Son idée&nbsp;: faire venir des professionnels du cinéma et du spectacle dans le Sud de la France, pour que chacun puisse se former auprès de celles et ceux qui font le métier.</p>
       </div>
       <ol class="plans">
         <li class="plan reveal">
           <span class="plan-num" aria-hidden="true">01</span>
           <span class="plan-no mono">Plan 01</span>
-          <h3 class="plan-t">Se former<span class="dot"></span></h3>
-          <p>Des stages et des ateliers encadrés par un cascadeur professionnel&nbsp;: chutes, combat scénique, câblage.</p>
+          <h3 class="plan-t">On invite<span class="dot"></span></h3>
+          <p>Cascadeurs, coordinateurs de cascades, chorégraphes de combat&nbsp;: à chaque stage, un ou une pro du métier.</p>
         </li>
         <li class="plan reveal r2">
           <span class="plan-num" aria-hidden="true">02</span>
           <span class="plan-no mono">Plan 02</span>
-          <h3 class="plan-t">Se préparer<span class="dot"></span></h3>
-          <p>Arts martiaux et préparation physique pour encaisser les prises sans se blesser.</p>
+          <h3 class="plan-t">Tu te formes<span class="dot"></span></h3>
+          <p>Chutes, réactions, combat scénique&nbsp;: les techniques du métier, sur 1 ou 2 jours, en sécurité.</p>
         </li>
         <li class="plan reveal r3">
           <span class="plan-num" aria-hidden="true">03</span>
           <span class="plan-no mono">Plan 03</span>
-          <h3 class="plan-t">Tourner<span class="dot"></span></h3>
-          <p>Des séquences d’action chorégraphiées puis filmées, pour passer du tapis à l’écran.</p>
+          <h3 class="plan-t">Ouvert à tous<span class="dot"></span></h3>
+          <p>Débutants comme confirmés, sportifs ou comédiens&nbsp;: pas besoin d’être du milieu pour venir.</p>
         </li>
       </ol>
       <div class="sb">
@@ -1396,7 +1480,7 @@ body { margin: 0; background: #231F20; }
             <p class="slug" style="color: #9A304F">Storyboard</p>
             <h3 class="sb-h"><span class="serif">Une séance</span> type<span class="dot"></span></h3>
           </div>
-          <p class="sb-note">Le déroulé d’un stage, plan par plan.</p>
+          <p class="sb-note">Le déroulé type d’un stage, plan par plan. Le contenu varie selon l’intervenant.</p>
         </div>
         <ol class="sb-row">
           <li class="sb-cell reveal">
@@ -1415,16 +1499,12 @@ body { margin: 0; background: #231F20; }
             <p class="sb-p">Coups simulés, esquives et réactions&nbsp;: on frappe sans toucher, en rythme avec son partenaire.</p>
           </li>
           <li class="sb-cell reveal r2">
-            <div class="sb-frame"><span class="sb-tag mono">Plan 4 · Moteur&nbsp;!</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">La caméra en tournage</span></span><span class="sb-time mono">TC 02:30</span></div>
-            <h4 class="sb-t"><span class="sb-n mono">04</span>Ça tourne</h4>
-            <p class="sb-p">La scène est filmée puis revue à l’écran, pour ajuster les angles et le rythme.</p>
+            <div class="sb-frame"><span class="sb-tag mono">Plan 4 · Plan-séquence</span><span class="sb-ph"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span class="sb-ph-t">Photo à venir</span><span class="sb-ph-h">La séquence en entier</span></span><span class="sb-time mono">TC 02:30</span></div>
+            <h4 class="sb-t"><span class="sb-n mono">04</span>La séquence</h4>
+            <p class="sb-p">On assemble les gestes du jour dans une courte séquence chorégraphiée, présentée devant le groupe.</p>
           </li>
         </ol>
       </div>
-      <figure class="sb-quote reveal">
-        <blockquote><p>«&nbsp;Sport, sport, sport.&nbsp;»</p></blockquote>
-        <figcaption><span class="mono">Jean Huynh</span> · sur la base du métier, dans <a href="https://trustsportsmagazine.fr/tomber-juste-avec-jean-huynh-cascadeur/" target="_blank" rel="noopener">Trust Sports Magazine</a></figcaption>
-      </figure>
     </div>
   </section>
 
@@ -1433,186 +1513,149 @@ body { margin: 0; background: #231F20; }
       <div class="head2">
         <div>
           <p class="slug reveal" style="color: #EEEDE9">SC. 02 — Au programme</p>
-          <h2 class="h2 reveal" style="margin-top: 30px; color: #FFFFFF"><span class="serif">Trois disciplines,</span>une seule scène<span class="dot"></span></h2>
+          <h2 class="h2 reveal" style="margin-top: 30px; color: #FFFFFF"><span class="serif">Quatre disciplines,</span>une seule scène<span class="dot"></span></h2>
         </div>
-        <div class="disc-intro reveal r2"><p>À Seven Action, les trois se répondent&nbsp;: les arts martiaux donnent la précision, la cascade l’engagement, le cinéma le sens du cadre.</p><p>L’association les réunit dans un même parcours, encadré par un cascadeur professionnel en activité&nbsp;: pour progresser à son rythme, du premier stage à la première scène tournée.</p></div>
+        <div class="disc-intro reveal r2"><p>À Seven Action, les quatre se répondent&nbsp;: la cascade donne l’engagement, le cinéma le sens du cadre, le spectacle le goût du direct, les arts martiaux la précision.</p><p>Seven Action les réunit en faisant venir des professionnels en activité&nbsp;: pour apprendre auprès d’eux et progresser à son rythme, d’un stage à l’autre.</p></div>
       </div>
       <div class="discs">
         <article class="disc-item reveal">
           <div class="disc-bar" aria-hidden="true"></div>
           <p class="disc-no mono"><span>Scène 01</span><span>Prise 1</span></p>
           <h3 class="disc-t">Cascade<span class="dot"></span></h3>
-          <p class="disc-text">Chuter, rouler, encaisser, se relever. On apprend les bases du métier, et la sécurité avant tout.</p>
-          <ul class="disc-tags"><li>Chutes</li><li>Roulades</li><li>Réceptions</li><li>Câblage</li><li>Acrobatie</li></ul>
+          <p class="disc-text">Chuter, rouler, encaisser, se relever. Les bases du métier, et la sécurité avant tout.</p>
+          <ul class="disc-tags"><li>Chutes</li><li>Roulades</li><li>Réceptions</li><li>Acrobatie</li></ul>
         </article>
         <article class="disc-item reveal r2">
           <div class="disc-bar" aria-hidden="true"></div>
           <p class="disc-no mono"><span>Scène 02</span><span>Prise 1</span></p>
-          <h3 class="disc-t">Arts martiaux<span class="dot"></span></h3>
-          <p class="disc-text">Le taekwondo comme socle, enrichi de boxe et de tricking&nbsp;: précision, souplesse, explosivité. Ce qui rend un combat crédible à l’image.</p>
-          <ul class="disc-tags"><li>Taekwondo</li><li>Boxe</li><li>Tricking</li><li>Préparation physique</li></ul>
+          <h3 class="disc-t">Cinéma<span class="dot"></span></h3>
+          <p class="disc-text">Frapper sans toucher, vendre l’impact, penser au cadre&nbsp;: on chorégraphie des combats pensés pour la caméra.</p>
+          <ul class="disc-tags"><li>Combat scénique</li><li>Chorégraphie</li><li>Jeu face caméra</li><li>Réactions</li></ul>
         </article>
-        <article class="disc-item reveal r3">
+        <article class="disc-item reveal">
           <div class="disc-bar" aria-hidden="true"></div>
           <p class="disc-no mono"><span>Scène 03</span><span>Prise 1</span></p>
-          <h3 class="disc-t">Cinéma<span class="dot"></span></h3>
-          <p class="disc-text">Frapper sans toucher, vendre l’impact, penser au cadre&nbsp;: on chorégraphie des combats pour la caméra, puis on les tourne.</p>
-          <ul class="disc-tags"><li>Combat scénique</li><li>Chorégraphie</li><li>Jeu face caméra</li><li>Tournage</li></ul>
+          <h3 class="disc-t">Spectacle<span class="dot"></span></h3>
+          <p class="disc-text">Monter une chorégraphie pour un public&nbsp;: démonstrations, spectacles vivants, événements. L’action en direct, sans seconde prise.</p>
+          <ul class="disc-tags"><li>Démonstration</li><li>Spectacle vivant</li><li>Mise en scène</li><li>Chorégraphie</li></ul>
+        </article>
+        <article class="disc-item reveal r2">
+          <div class="disc-bar" aria-hidden="true"></div>
+          <p class="disc-no mono"><span>Scène 04</span><span>Prise 1</span></p>
+          <h3 class="disc-t">Arts martiaux<span class="dot"></span></h3>
+          <p class="disc-text">Le socle du combat à l’image&nbsp;: précision, contrôle, souplesse et explosivité. Ce qui rend une scène d’action crédible.</p>
+          <ul class="disc-tags"><li>Frappes</li><li>Projections</li><li>Souplesse</li><li>Préparation physique</li></ul>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="fdr" id="fondateur">
-    <div class="grain" aria-hidden="true"></div>
-    <div class="wrap" style="z-index: 2">
-      <div class="fdr-top">
-        <figure class="portrait reveal">
-          <div class="portrait-frame">
-            <img src="img/jean-huynh.webp" alt="Portrait de Jean Huynh, fondateur de Seven Action" loading="lazy" decoding="async">
-            <div class="pf-hud" aria-hidden="true">
-              <span class="c c-tl"></span><span class="c c-tr"></span><span class="c c-bl"></span><span class="c c-br"></span>
-              <span class="pf-rec"><i></i>REC</span>
-              <span class="pf-tag">Casting · Rôle principal</span>
-              <span class="pf-focus"><span class="pf-af">AF</span></span>
+  <section class="gen" id="intervenants">
+    <div class="wrap">
+      <div class="gen-head">
+        <div>
+          <p class="slug reveal">SC. 03 — Archives · Saison 2025 – 2026</p>
+          <h2 class="gen-h reveal"><span class="serif">Nos stages</span><b>passés<span class="dot"></span></b></h2>
+        </div>
+        <div class="gen-side reveal r2">
+          <p class="gen-intro">Seven Action ne donne pas les cours&nbsp;: elle fait venir celles et ceux qui font l’action à l’écran et sur scène. En une saison, cinq pros du métier ont fait le déplacement dans le Sud de la France.</p>
+          <div class="gen-avs"><span class="gen-av"><img src="img/past2-agel-a.webp" alt="" loading="lazy" decoding="async"><img src="img/past2-agel-b.webp" alt="" loading="lazy" decoding="async"><img src="img/past2-vu.webp" alt="" loading="lazy" decoding="async"><img src="img/past2-gaspard.webp" alt="" loading="lazy" decoding="async"><img src="img/past2-blissat.webp" alt="" loading="lazy" decoding="async"></span><span class="gen-with mono">avec Aurélia &amp; Noémie Agel · Alex Vu · Jérôme Gaspard · Jamel Blissat</span></div>
+        </div>
+      </div>
+      <ul class="gstats reveal" aria-label="Seven Action en chiffres">
+        <li><b><span class="cnt" data-count="4">4</span></b><span>stages organisés<br>en une saison</span></li>
+        <li><b><span class="cnt" data-count="5">5</span></b><span>intervenants pros<br>invités</span></li>
+        <li><b><span class="cnt" data-count="225">225</span><i>+</i></b><span>films &amp; séries au générique<br>de nos intervenants</span></li>
+      </ul>
+      <div class="bobs">
+        <article class="bob reveal">
+          <span class="bob-ghost" aria-hidden="true">01</span>
+          <p class="bob-top mono"><span>Bobine 01 · Stage passé</span><span>Clap de fin</span></p>
+          <p class="bob-date"><b>14</b><span class="serif">déc. 2025</span></p>
+          <div class="bob-body">
+            <div class="bob-ph is-duo">
+              <div class="bob-frame"><img src="img/past2-agel-a.webp" alt="Aurélia et Noémie Agel" loading="lazy" decoding="async"><img src="img/past2-agel-b.webp" alt="Aurélia et Noémie Agel" loading="lazy" decoding="async"></div>
+              <span class="bob-stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="arc01" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"></path></defs><text><textPath href="#arc01" startOffset="3%">CLAP DE FIN · BOBINE · CLAP DE FIN</textPath></text></svg><b>01.</b></span>
+            </div>
+            <div class="bob-txt">
+              <p class="bob-t serif">Perfectionnement martial &amp; initiation à la cascade</p>
+              <h3 class="bob-n">Aurélia &amp;<br>Noémie Agel<span class="dot"></span></h3>
+              <p class="bob-r">Cascadeuse professionnelle · 5e dan de taekwondo</p>
+              <p class="bob-c">Fast X · John Wick 4 · Avengers · Black Widow</p>
             </div>
           </div>
-          <figcaption class="portrait-cap"><span>Jean Huynh</span><span>Président</span><span>Prise 01</span></figcaption>
-        </figure>
-        <div class="fdr-txt">
-          <p class="slug reveal" style="color: #EDBE5C">SC. 03 — Gros plan</p>
-          <p class="fdr-role-line serif reveal">Fondateur et président</p>
-          <h2 class="fdr-name reveal"><span class="serif">Jean</span><span class="fdr-last">Huynh<span class="dot"></span></span></h2>
-          <p class="fdr-roles reveal"><span>Cascadeur</span><span aria-hidden="true">·</span><span>Préparateur physique</span><span aria-hidden="true">·</span><span>Entraîneur de taekwondo</span></p>
-          <div class="fdr-bio reveal r2">
-            <p>Enfant, Jean grimpait et sautait partout. Le taekwondo, commencé à 15 ans, l’a mené jusqu’à la <strong>ceinture noire 5e dan</strong> et à fonder son propre club, H-Team, à Montpellier. Diplômé en STAPS, il a aussi été préparateur physique, sauveteur aquatique et moniteur de jet-ski&nbsp;: un bagage précieux quand il s’agit de sécurité.</p>
-            <p>Depuis 2019, il est cascadeur professionnel&nbsp;: <strong>combats, chutes, acrobaties et cascades aquatiques</strong> sur des productions françaises et internationales. Dès son premier tournage, Jack Ryan, il intègre l’équipe qui conçoit les chorégraphies. Suivront notamment The Old Guard 2, Sous la Seine et K.O.</p>
-            <p>Basé à Montpellier, il tourne entre Paris et l’étranger. Avec Seven Action, il transmet ce qu’il pratique chaque jour&nbsp;: l’exigence du geste, la sécurité et le plaisir de l’action bien faite.</p>
-          </div>
-          <div class="fdr-ctas reveal r3">
-            <a class="idbtn" href="jean-huynh.html">
-              <span class="idbtn-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14.5 10h4M14.5 13h3"></path></svg></span>
-              <span class="idbtn-txt"><b>Page casting</b><span class="mono">Showreel · Set card · Filmographie</span></span>
-              <span class="idbtn-go" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
-            </a>
-            <a class="btn btn-ghost fdr-cta" href="https://www.imdb.com/name/nm13771185/" target="_blank" rel="noopener"><span class="imdb-badge" aria-hidden="true">IMDb</span>Filmographie complète sur IMDb <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bento">
-        <article class="fiche reveal" aria-label="Fiche technique de Jean Huynh">
-          <figure class="fiche-img">
-            <img src="img/g-side.webp" alt="Jean Huynh en tenue et protections de cascade" loading="lazy" decoding="async">
-            <span class="c c-tl" aria-hidden="true"></span><span class="c c-tr" aria-hidden="true"></span><span class="c c-bl" aria-hidden="true"></span><span class="c c-br" aria-hidden="true"></span>
-            <figcaption class="fiche-tag mono">ID 07-JH · Fiche technique</figcaption>
-          </figure>
-          <div class="fiche-body">
-            <span class="fiche-wm" aria-hidden="true">07</span>
-            <p class="fiche-k mono">Jean Huynh · Président &amp; fondateur</p>
-            <h3 class="fiche-h"><span class="serif">Fiche</span> technique<span class="dot"></span></h3>
-            <ul class="fstats">
-              <li><b><span class="cnt" data-count="5">5</span><small>e dan</small></b><span>Ceinture noire de taekwondo</span></li>
-              <li><b><span class="cnt" data-count="21">21</span></b><span>Médailles aux championnats de France</span></li>
-              <li><b><span class="cnt" data-count="15">15</span></b><span>Films &amp; séries depuis 2023</span></li>
-              <li><b><span class="cnt" data-count="7">7</span><small>ans</small></b><span>Sur les plateaux</span></li>
-            </ul>
-            <div class="fiche-sub"><p class="mono">Diplômes &amp; encadrement</p><a class="tile-link" href="#parcours">Son parcours <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a></div>
-            <ul class="passes">
-                <li class="pass" style="--band: #EDBE5C"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Formation</span><b>Licence STAPS</b><span class="pass-d">Préparation physique</span></li>
-                <li class="pass" style="--band: #9A304F"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Fédération</span><b>CQP moniteur d’arts martiaux</b><span class="pass-d">Mention taekwondo · FFTDA</span></li>
-                <li class="pass" style="--band: #E0566F"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Sécurité</span><b>BPJEPS · BNSSA · PSE2</b><span class="pass-d">Nautisme, sauvetage, premiers secours</span></li>
-                <li class="pass" style="--band: #EEEDE9"><span class="pass-hole" aria-hidden="true"></span><span class="pass-k mono">Enseignement</span><b>Fondateur de H-Team Taekwondo</b><span class="pass-d">5 ans de cours, enfants et adultes</span></li>
-            </ul>
-          </div>
+          <ul class="bob-tags"><li>Chorégraphie de combat</li><li>Chutes &amp; projections</li><li>Tous niveaux</li></ul>
+          <p class="bob-place mono">Castelnau-le-Lez</p>
         </article>
-        <a class="tile t-press reveal" href="https://trustsportsmagazine.fr/tomber-juste-avec-jean-huynh-cascadeur/" target="_blank" rel="noopener">
-          <img class="tp-logo" src="img/trust-logo.webp" alt="Trust Sports Magazine" loading="lazy" decoding="async">
-          <span class="tp-txt"><span class="tile-k mono">Dans la presse · juillet 2025</span><b><span class="serif">« Tomber juste »</span> l’interview de Jean par Marie Gineste</b></span>
-          <span class="tp-go">Lire <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
-        </a>
-      </div>
-
-      <div class="tl" id="parcours">
-        <div class="tl-head reveal">
-          <p class="eyebrow" style="color: #EDBE5C">Parcours</p>
-          <h3 class="block-h"><span class="serif">Du tatami</span> au plateau<span class="dot"></span></h3>
-        </div>
-        <ol class="tl-list">
-          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">01</span><p class="tl-y mono">2012 – 2015</p><h4 class="tl-t">Licence STAPS</h4><p class="tl-p">Préparation physique et entraînement, spécialité gymnastique, à Montpellier.</p></div></li>
-          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">02</span><p class="tl-y mono">2015 · 2019</p><h4 class="tl-t">CQP moniteur d’arts martiaux</h4><p class="tl-p">Mention taekwondo, délivré par la FFTDA.</p></div></li>
-          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">03</span><p class="tl-y mono">2016 – 2021</p><h4 class="tl-t">Fondateur de H-Team Taekwondo</h4><p class="tl-p">Club fondé et entraîné à Montpellier, enfants et adultes, du loisir à la compétition.</p></div></li>
-          <li class="tl-item has-img"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">04</span><p class="tl-y mono">2019 →</p><h4 class="tl-t">Cascadeur professionnel</h4><p class="tl-p">Combats, chutes et doublures pour le cinéma, les séries et le spectacle.</p><img class="tl-img" src="img/g-set.webp" alt="Jean Huynh sur un tournage, devant un véhicule militaire" loading="lazy" decoding="async"></div></li>
-          <li class="tl-item"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">05</span><p class="tl-y mono">2019 – 2020</p><h4 class="tl-t">BPJEPS · BNSSA · PSE2</h4><p class="tl-p">Activités nautiques, sauvetage aquatique et premiers secours en équipe.</p></div></li>
-          <li class="tl-item has-img"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">06</span><p class="tl-y mono">2020 →</p><h4 class="tl-t">Formation continue cascade</h4><p class="tl-p">Stages au Campus Univers Cascades et auprès de régleurs professionnels.</p><img class="tl-img" src="img/g-hall.webp" alt="Jean Huynh à l’entraînement, en position de tir dans un couloir" loading="lazy" decoding="async"></div></li>
-          <li class="tl-item is-now"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card"><span class="tl-n" aria-hidden="true">07</span><p class="tl-y mono">Depuis 2025</p><h4 class="tl-t">Seven Action<span class="dot"></span></h4><p class="tl-p">Il fonde l’association en 2025 pour transmettre l’action, du tatami au plateau.</p></div></li>
-        </ol>
-      </div>
-
-      <div class="reel reveal">
-        <div class="gallery-head">
-          <div>
-            <p class="eyebrow" style="color: #EDBE5C">Showreel</p>
-            <h3 class="block-h"><span class="serif">Bande</span> démo<span class="dot"></span></h3>
+        <article class="bob reveal r2">
+          <span class="bob-ghost" aria-hidden="true">02</span>
+          <p class="bob-top mono"><span>Bobine 02 · Stage passé</span><span>Clap de fin</span></p>
+          <p class="bob-date"><b>14–15</b><span class="serif">mars 2026</span></p>
+          <div class="bob-body">
+            <div class="bob-ph">
+              <div class="bob-frame"><img src="img/past2-vu.webp" alt="Alex Vu" loading="lazy" decoding="async"></div>
+              <span class="bob-stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="arc02" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"></path></defs><text><textPath href="#arc02" startOffset="3%">CLAP DE FIN · BOBINE · CLAP DE FIN</textPath></text></svg><b>02.</b></span>
+            </div>
+            <div class="bob-txt">
+              <p class="bob-t serif">Stage cascades physiques</p>
+              <h3 class="bob-n">Alex<br>Vu<span class="dot"></span></h3>
+              <p class="bob-r">Coordinateur de cascades, chorégraphe, cascadeur</p>
+              <p class="bob-c">Plus de 20 ans au cinéma et dans le spectacle vivant</p>
+            </div>
           </div>
-          <p class="gallery-note mono">Jean Huynh · Combats, chutes, cascades</p>
-        </div>
-        <a class="reel-frame" href="https://www.youtube.com/watch?v=VIqqSGx5h1s" target="_blank" rel="noopener" data-reel="VIqqSGx5h1s" aria-label="Lancer le showreel de Jean Huynh (YouTube)">
-          <img src="img/reel-thumb.webp" alt="" loading="lazy" decoding="async">
-          <span class="reel-shade" aria-hidden="true"></span>
-          <span class="c c-tl" aria-hidden="true"></span><span class="c c-tr" aria-hidden="true"></span><span class="c c-bl" aria-hidden="true"></span><span class="c c-br" aria-hidden="true"></span>
-          <span class="reel-rec mono" aria-hidden="true"><i></i>Play</span>
-          <span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
-          <span class="reel-title"><span class="serif">Showreel</span><b>Jean Huynh<span class="dot"></span></b><span class="reel-tags mono">Combat · Chutes · Câble · Eau</span></span>
-          <span class="reel-time mono" aria-hidden="true">Bande démo · YouTube</span>
-        </a>
-      </div>
-
-      <div class="fdr-mid seen reveal">
-        <div class="gallery-head">
-          <div>
-            <p class="eyebrow" style="color: #EDBE5C">Générique</p>
-            <h3 class="block-h"><span class="serif">Vu</span> dans<span class="dot"></span></h3>
+          <ul class="bob-tags"><li>Tous niveaux</li><li>1 ou 2 jours</li></ul>
+          <p class="bob-place mono">Halle des sports, Le Crès</p>
+        </article>
+        <article class="bob reveal">
+          <span class="bob-ghost" aria-hidden="true">03</span>
+          <p class="bob-top mono"><span>Bobine 03 · Stage passé</span><span>Clap de fin</span></p>
+          <p class="bob-date"><b>11–12</b><span class="serif">avril 2026</span></p>
+          <div class="bob-body">
+            <div class="bob-ph">
+              <div class="bob-frame"><img src="img/past2-gaspard.webp" alt="Jérôme Gaspard" loading="lazy" decoding="async"></div>
+              <span class="bob-stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="arc03" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"></path></defs><text><textPath href="#arc03" startOffset="3%">CLAP DE FIN · BOBINE · CLAP DE FIN</textPath></text></svg><b>03.</b></span>
+            </div>
+            <div class="bob-txt">
+              <p class="bob-t serif">Stage cascades physiques</p>
+              <h3 class="bob-n">Jérôme<br>Gaspard<span class="dot"></span></h3>
+              <p class="bob-r">Coordinateur de cascades, chorégraphe</p>
+              <p class="bob-c">Plus de 190 films &amp; séries · jury du FCA</p>
+            </div>
           </div>
-          <p class="gallery-note mono">Films, séries et spectacles · France &amp; international</p>
-        </div>
-        <ul class="posters posters-short" aria-label="Quelques productions sur lesquelles Jean Huynh a travaillé">
-            <li class="pcard pc-film">
-              <img src="img/posters-p06.webp" alt="Affiche de The Old Guard 2 (2025)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2025</span><span class="pc-kind">Film</span><span class="pc-det">V. Mahoney</span></span>
-            </li>
-            <li class="pcard pc-film">
-              <img src="img/posters-p12.webp" alt="Affiche de Canary Black (2024)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2024</span><span class="pc-kind">Film</span><span class="pc-det">P. Morel</span></span>
-            </li>
-            <li class="pcard pc-film">
-              <img src="img/posters-p14.webp" alt="Affiche de Sous la Seine (2024)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2024</span><span class="pc-kind">Film</span><span class="pc-det">X. Gens</span></span>
-            </li>
-            <li class="pcard pc-serie">
-              <img src="img/posters-p15.webp" alt="Affiche de Jack Ryan (S4) (2023)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2023</span><span class="pc-kind">Série · doublure</span><span class="pc-det">6 ép.</span></span>
-            </li>
-            <li class="pcard pc-film">
-              <img src="img/posters-p13.webp" alt="Affiche de The Killer (2024)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2024</span><span class="pc-kind">Film</span><span class="pc-det">J. Woo</span></span>
-            </li>
-            <li class="pcard pc-film">
-              <img src="img/posters-p05.webp" alt="Affiche de The Family Plan 2 (2025)" loading="lazy" decoding="async">
-              <span class="pc-info"><span class="pc-year mono">2025</span><span class="pc-kind">Film</span><span class="pc-det">S. Cellan Jones</span></span>
-            </li>
-            <li class="pcard pc-more">
-              <a class="pc-more-link" href="jean-huynh.html#filmo">
-                <span class="pc-more-n"><span class="n-d">+9</span><span class="n-m">+10</span></span>
-                <span class="pc-more-txt">Toute sa <b>filmographie</b></span>
-                <span class="pc-more-cta mono">Page casting <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
-              </a>
-            </li>
-        </ul>
+          <ul class="bob-tags"><li>Tous niveaux</li><li>1 ou 2 jours</li></ul>
+          <p class="bob-place mono">Halle des sports, Le Crès</p>
+        </article>
+        <article class="bob reveal r2">
+          <span class="bob-ghost" aria-hidden="true">04</span>
+          <p class="bob-top mono"><span>Bobine 04 · Stage passé</span><span>Clap de fin</span></p>
+          <p class="bob-date"><b>23–24</b><span class="serif">mai 2026</span></p>
+          <div class="bob-body">
+            <div class="bob-ph">
+              <div class="bob-frame"><img src="img/past2-blissat.webp" alt="Jamel Blissat" loading="lazy" decoding="async"></div>
+              <span class="bob-stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="arc04" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"></path></defs><text><textPath href="#arc04" startOffset="3%">CLAP DE FIN · BOBINE · CLAP DE FIN</textPath></text></svg><b>04.</b></span>
+            </div>
+            <div class="bob-txt">
+              <p class="bob-t serif">Stage cascade physique</p>
+              <h3 class="bob-n">Jamel<br>Blissat<span class="dot"></span></h3>
+              <p class="bob-r">Cascadeur professionnel, chorégraphe</p>
+              <p class="bob-c">Paris Has Fallen · Indiana Jones · Moon Knight</p>
+            </div>
+          </div>
+          <ul class="bob-tags"><li>1 ou 2 jours</li></ul>
+          <p class="bob-place mono">Montpellier</p>
+        </article>
       </div>
-
+      <div class="gen-next reveal">
+        <div>
+          <p class="gen-next-k mono">Bobine suivante</p>
+          <p class="gen-next-t"><span class="serif">Et si c’était</span> chez vous<span class="dot"></span></p>
+          <p class="gen-next-p">Communes, MJC, clubs, festivals&nbsp;: Seven Action fait venir l’intervenant et organise le stage. Vous apportez la salle et le relais auprès de vos habitants.</p>
+        </div>
+        <a class="btn btn-gold" href="#contact">Accueillir un stage <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
   </section>
+
 
   <section class="cut" aria-label="Écusson Seven Action">
     <div class="grain" aria-hidden="true"></div>
@@ -1620,7 +1663,7 @@ body { margin: 0; background: #231F20; }
     <div class="cut-stage">
       <span class="cut-ring r1" aria-hidden="true"></span><span class="cut-ring r2" aria-hidden="true"></span><span class="cut-ring r3" aria-hidden="true"></span>
       <div class="cut-emblem">
-        <img class="cut-logo" src="img/ecusson-requin-dore.webp" alt="Écusson Seven Action : un requin, avec la devise cinéma, cascade, arts martiaux" loading="lazy" decoding="async">
+        <img class="cut-logo" src="img/ecusson-dore-v2.webp" alt="Écusson Seven Action : un requin, avec la devise cascade, cinéma, spectacle, arts martiaux" loading="lazy" decoding="async">
         <span class="cut-glint" aria-hidden="true"></span>
       </div>
     </div>
@@ -1635,7 +1678,7 @@ body { margin: 0; background: #231F20; }
         </div>
         <div class="evts-side">
           <p class="evts-quote serif reveal r2">Le cinéma d’action, de l’autre côté de la caméra.</p>
-          <p class="evts-p reveal r2">Stage intensif de cascades physiques, sur 1 ou 2 jours, avec le cascadeur et chorégraphe Jamel Blissat. Places limitées, pré-inscription obligatoire par email.</p>
+          <p class="evts-p reveal r2">Stage intensif de cascades physiques, sur 1 ou 2 jours, avec le cascadeur et chorégraphe Jamel Blissat. Places limitées, inscription en ligne obligatoire.</p>
         </div>
       </div>
 
@@ -1679,51 +1722,6 @@ body { margin: 0; background: #231F20; }
         </div>
       </div>
 
-      <div class="past-wrap">
-        <div class="past-head">
-          <div>
-            <p class="slug reveal" style="color: #645C5E">Archives</p>
-            <h3 class="past-h reveal">Stages passés</h3>
-          </div>
-          <button type="button" class="past-toggle reveal" aria-expanded="false" aria-controls="past-list" data-on="toggleArch"><span class="pt-open">Voir les 4 bobines</span><span class="pt-close">Masquer les archives</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
-        </div>
-        <div class="past-reveal" id="past-list"><div class="past-inner">
-        <ol class="past-list">
-          <li class="past">
-            <div class="past-top"><span class="mono">Bobine 04</span><span class="past-stamp">Clap de fin</span></div>
-            <p class="past-date">23 – 24 mai 2026</p>
-            <h4 class="past-title">Stage cascade physique</h4>
-            <ul class="past-guests"><li><p class="past-guest">Jamel Blissat</p><p class="past-role">Chorégraphe, cascadeur professionnel</p></li></ul>
-            <ul class="past-tags"><li>1 ou 2 jours</li></ul>
-            <p class="past-place"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Montpellier</p>
-          </li>
-          <li class="past reveal r2">
-            <div class="past-top"><span class="mono">Bobine 03</span><span class="past-stamp">Clap de fin</span></div>
-            <p class="past-date">11 &amp; 12 avril 2026</p>
-            <h4 class="past-title">Stage cascades physiques</h4>
-            <ul class="past-guests"><li><p class="past-guest">Jérôme Gaspard</p><p class="past-role">Coordinateur de cascades, chorégraphe</p><p class="past-cred">Plus de 190 films &amp; séries · jury du FCA, Festival de la cascade et de l’action</p></li></ul>
-            <ul class="past-tags"><li>Tous niveaux</li><li>1 ou 2 jours</li></ul>
-            <p class="past-place"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Halle des sports, Le Crès</p>
-          </li>
-          <li class="past reveal r3">
-            <div class="past-top"><span class="mono">Bobine 02</span><span class="past-stamp">Clap de fin</span></div>
-            <p class="past-date">14 – 15 mars 2026</p>
-            <h4 class="past-title">Stage cascades physiques</h4>
-            <ul class="past-guests"><li><p class="past-guest">Alex Vu</p><p class="past-role">Coordinateur de cascades, chorégraphe, cascadeur</p><p class="past-cred">Plus de 20 ans d’expérience au cinéma et dans le spectacle vivant</p></li></ul>
-            <ul class="past-tags"><li>Tous niveaux</li><li>1 ou 2 jours</li></ul>
-            <p class="past-place"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Halle des sports, Le Crès</p>
-          </li>
-          <li class="past reveal r3">
-            <div class="past-top"><span class="mono">Bobine 01</span><span class="past-stamp">Clap de fin</span></div>
-            <p class="past-date">14 décembre 2025</p>
-            <h4 class="past-title">Du perfectionnement martial à l’initiation à la cascade</h4>
-            <ul class="past-guests"><li><p class="past-guest">Aurélia Agel</p><p class="past-role">Cascadeuse professionnelle</p><p class="past-cred">Plus de 35 films&nbsp;: Fast X, John Wick 4, Avengers, Black Widow…</p></li><li><p class="past-guest">Noémie Agel</p><p class="past-role">5e dan de taekwondo, 2e dan de judo</p></li></ul>
-            <ul class="past-tags"><li>Tous niveaux</li><li>Chorégraphie combat</li><li>Chutes &amp; projections</li></ul>
-            <p class="past-place"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Castelnau-le-Lez</p>
-          </li>
-        </ol>
-        </div></div>
-      </div>
     </div>
   </section>
 
@@ -1733,7 +1731,7 @@ body { margin: 0; background: #231F20; }
       <div>
         <p class="slug reveal" style="color: #EDBE5C">SC. 05 — Dernière prise</p>
         <h2 class="h2 reveal" style="margin-top: 30px; color: #EEEDE9"><span class="serif" style="color: #EDBE5C">Silence, moteur…</span>Action<span class="dot"></span></h2>
-        <p class="contact-p reveal r2">Une question sur un stage, envie de te lancer dans la cascade ou de rejoindre l’asso&nbsp;? Écris-nous, on te répond vite.</p>
+        <p class="contact-p reveal r2">Une question sur un stage, envie de te lancer dans la cascade, de rejoindre l’asso ou d’accueillir un stage chez toi&nbsp;? Écris-nous, on te répond vite.</p>
         <p class="contact-mail reveal r2"><a href="mailto:sevenaction34@gmail.com">sevenaction34@gmail.com</a></p>
         <ul class="socials reveal r2">
           <li><a class="social social-ig" href="https://www.instagram.com/7sevenaction" target="_blank" rel="noopener"><span class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="ig-dot" cx="17.2" cy="6.8" r="1.1"></circle></svg></span><span>@7sevenaction</span> <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a></li>
@@ -1745,7 +1743,7 @@ body { margin: 0; background: #231F20; }
           <div class="sheet-grid">
             <label class="field"><span>Prénom et nom <b class="req" aria-hidden="true">*</b></span><input type="text" name="c-nom" placeholder="Prénom Nom" autocomplete="name" required maxlength="120"></label>
             <label class="field"><span>Email <b class="req" aria-hidden="true">*</b></span><input type="email" name="c-email" placeholder="adresse@email.fr" autocomplete="email" required maxlength="160"></label>
-            <label class="field full"><span>Ta demande</span><select name="c-sujet"><option>Un stage ou un atelier</option><option>Rejoindre l’association</option><option>Un projet de tournage</option><option>Autre chose</option></select></label>
+            <label class="field full"><span>Ta demande</span><select name="c-sujet"><option>Un stage ou un atelier</option><option>Accueillir un stage (commune, structure)</option><option>Rejoindre l’association</option><option>Un partenariat</option><option>Autre chose</option></select></label>
             <label class="field full"><span>Message <b class="req" aria-hidden="true">*</b></span><textarea name="c-msg" rows="4" placeholder="Ton niveau, tes envies, ton projet…" required maxlength="4000"></textarea></label>
           </div>
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1772,9 +1770,9 @@ body { margin: 0; background: #231F20; }
         <a class="btn btn-ghost" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>Rembobiner</a>
       </div>
       <div class="foot-credits">
-        <div><p class="eyebrow">Une production</p><p>Seven Action</p><p class="foot-sub">Cinéma · Cascade · Arts martiaux</p></div>
-        <div><p class="eyebrow">Président &amp; fondateur</p><p>Jean Huynh</p><p class="foot-sub">Cascadeur professionnel</p></div>
-        <div><p class="eyebrow">Au programme</p><ul><li><a href="#asso">L’asso</a></li><li><a href="#disciplines">Disciplines</a></li><li><a href="#fondateur">Le fondateur</a></li><li><a href="#affiche">À l’affiche</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div><p class="eyebrow">Une production</p><p>Seven Action</p><p class="foot-sub">Cascade · Cinéma · Spectacle · Arts martiaux</p></div>
+        <div><p class="eyebrow">L’association</p><p>Fondée en 2025 par Jean Huynh</p><p class="foot-sub">Sud de la France</p></div>
+        <div><p class="eyebrow">Au programme</p><ul><li><a href="#asso">L’asso</a></li><li><a href="#disciplines">Disciplines</a></li><li><a href="#intervenants">Nos stages</a></li><li><a href="#affiche">À l’affiche</a></li><li><a href="#contact">Contact</a></li></ul></div>
         <div><p class="eyebrow">Suivre l’asso</p><ul><li><a href="mailto:sevenaction34@gmail.com">sevenaction34@gmail.com</a></li><li><a class="foot-ig" href="https://www.instagram.com/7sevenaction" target="_blank" rel="noopener"><span class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="ig-dot" cx="17.2" cy="6.8" r="1.1"></circle></svg></span>Instagram</a></li></ul></div>
       </div>
       <div class="foot-bottom">

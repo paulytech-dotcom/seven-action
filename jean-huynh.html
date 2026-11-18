@@ -123,6 +123,12 @@ body { margin: 0; background: #141112; }
 .jh-seen i { color: rgba(238,237,233,.35); font-style: normal; }
 
 /* Showreel */
+.bio-sec { position: relative; padding: 120px 0 10px; background: #141112; }
+.bio-sec .bio-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 50px; align-items: start; }
+.bio-sec .bio-txt p { font-size: 18.5px; line-height: 1.7; color: rgba(238,237,233,.84); }
+.bio-sec .bio-txt p + p { margin-top: 18px; }
+.bio-sec .bio-txt strong { color: #FFFFFF; font-weight: 700; }
+@media (max-width: 900px) { .bio-sec .bio-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; } .bio-sec { padding-top: 84px; } }
 .reel-sec { position: relative; padding: 130px 0 120px; background: #141112; }
 .sec-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px 40px; }
 .sec-note { max-width: 420px; font-size: 16.5px; line-height: 1.6; color: rgba(238,237,233,.72); }
@@ -430,6 +436,20 @@ body { margin: 0; background: #141112; }
           <a class="btn btn-ghost btn-dl" href="#setcard">Set card <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
         </div>
         <p class="jh-seen"><span class="mono"><span lang="fr">Vu dans</span><span lang="en">Seen in</span></span><em>The Old Guard 2</em><i>/</i><em>Canary Black</em><i>/</i><em><span lang="fr">Sous la Seine</span><span lang="en">Under Paris</span></em><i>/</i><em>Jack Ryan</em><i>/</i><em>The Killer</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bio-sec" id="bio">
+    <div class="wrap bio-grid">
+      <div class="reveal">
+        <p class="slug">Bio</p>
+        <h2 class="h2"><span class="serif"><span lang="fr">En quelques</span><span lang="en">In a few</span></span><span lang="fr">mots</span><span lang="en">words</span><span class="dot"></span></h2>
+      </div>
+      <div class="bio-txt reveal r2">
+        <p><span lang="fr">Enfant, Jean grimpait et sautait partout. Le taekwondo, commencé à 15 ans, l’a mené jusqu’à la <strong>ceinture noire 5e dan</strong> et à fonder son propre club, H-Team, à Montpellier. Diplômé en STAPS, il a aussi été préparateur physique, sauveteur aquatique et moniteur de jet-ski&nbsp;: un bagage précieux quand il s’agit de sécurité.</span><span lang="en">As a kid, Jean was always climbing and jumping. Taekwondo, which he started at 15, took him to a <strong>5th Dan black belt</strong> and to founding his own club, H-Team, in Montpellier. With a sports science degree, he has also worked as a strength coach, lifeguard and jet-ski instructor: a valuable background when safety is at stake.</span></p>
+        <p><span lang="fr">Depuis 2019, il est cascadeur professionnel&nbsp;: <strong>combats, chutes, acrobaties et cascades aquatiques</strong> sur des productions françaises et internationales. Dès son premier tournage, Jack Ryan, il intègre l’équipe qui conçoit les chorégraphies. Suivront notamment The Old Guard 2, Sous la Seine et K.O.</span><span lang="en">A professional stunt performer since 2019, he works on <strong>fights, falls, acrobatics and water stunts</strong> for French and international productions. On his very first shoot, Jack Ryan, he joined the team designing the fight choreography. Credits since include The Old Guard 2, Under Paris and K.O.</span></p>
+        <p><span lang="fr">Basé à Montpellier, il tourne entre Paris et l’étranger.</span><span lang="en">Based in Montpellier, he works between Paris and abroad.</span></p>
       </div>
     </div>
   </section>
