@@ -317,6 +317,17 @@ body { margin: 0; background: #141112; }
   .infos, .prog, .guest, .reg { padding-block: 84px; }
   .cd-units span { min-width: 56px; }
 }
+
+/* ---------- Prix : typo pinceau Hey August ---------- */
+@font-face { font-family: 'Hey August'; src: url(fonts/hey-august.woff) format('woff'), url(fonts/hey-august.otf) format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+.sticker b { margin: 4px 0 2px; font-family: 'Hey August', 'Inter Tight', system-ui, sans-serif; font-size: 50px; font-weight: 400; letter-spacing: 0; line-height: .95; }
+.prices { margin-top: 12px; gap: 2px; }
+.prices p { gap: 12px; }
+.prices p:nth-child(2) { padding-left: 16px; }
+.prices b { font-family: 'Hey August', 'Inter Tight', system-ui, sans-serif; font-size: 56px; font-weight: 400; letter-spacing: 0; line-height: 1.05; color: #EDBE5C; rotate: -4deg; display: inline-block; }
+.opt strong { margin-top: 8px; font-family: 'Hey August', 'Inter Tight', system-ui, sans-serif; font-size: 38px; font-weight: 400; letter-spacing: 0; line-height: 1; rotate: -3deg; transform-origin: left center; display: inline-block; align-self: flex-start; }
+@media (max-width: 900px) { .sticker b { font-size: 38px; } }
+@media (max-width: 640px) { .prices b { font-size: 48px; } .opt strong { font-size: 34px; } }
 </style>
 </head>
 <body>

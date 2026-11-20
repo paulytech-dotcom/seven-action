@@ -1330,6 +1330,17 @@ body { margin: 0; background: #231F20; }
 }
 
 
+
+/* ---------- Prix : typo pinceau Hey August ---------- */
+@font-face { font-family: 'Hey August'; src: url(fonts/hey-august.woff) format('woff'), url(fonts/hey-august.otf) format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+.t-prices { margin-top: 12px; gap: 4px; }
+.t-prices p { gap: 12px; }
+.t-prices p:nth-child(2) { padding-left: 10px; }
+.t-prices .t-price { font-family: 'Hey August', 'Inter Tight', system-ui, sans-serif; font-size: 58px; font-weight: 400; line-height: 1.05; letter-spacing: 0; color: #EDBE5C; rotate: -4deg; text-shadow: 0 3px 0 rgba(35,31,32,.25); }
+.t-prices .t-note { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+.nb-p { display: inline-flex; align-items: baseline; gap: 6px; font-size: 15px; color: var(--muted); }
+.nb-p b { font-family: 'Hey August', 'Inter Tight', system-ui, sans-serif; font-size: 30px; font-weight: 400; line-height: 1; color: var(--fg); rotate: -4deg; display: inline-block; }
+@media (max-width: 760px) { .t-prices { flex-direction: row; display: flex; gap: 6px 20px; } .t-prices p:nth-child(2) { padding-left: 0; } .t-prices .t-price { font-size: 46px; } }
 </style>
 <style>.if { display: contents; } .if[hidden] { display: none !important; }</style>
 </head>
@@ -1415,6 +1426,7 @@ body { margin: 0; background: #231F20; }
         <span class="nb-k"><i></i>Prochain stage</span>
         <span class="nb-t">Cascades physiques · avec Jamel Blissat</span>
         <span class="nb-m">Sam. 5 &amp; dim. 6 déc. · Le Crès</span>
+        <span class="nb-p">dès <b>80&nbsp;€</b></span>
         <span class="nb-c"><span data-bind="cdShort"></span> <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
       </a>
     </div>
